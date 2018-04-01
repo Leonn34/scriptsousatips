@@ -61,7 +61,7 @@ clear
 
 rm /bin/ver1 > /dev/null 2> /dev/null
 
-wget -c -P /bin https://raw.githubusercontent.com/Leonn34/tetes/master/ver1 > /dev/null 2> /dev/null
+wget -c -P /bin https://raw.githubusercontent.com/Leonn34/testes/master/ver1 > /dev/null 2> /dev/null
 
 cd /bin
 
