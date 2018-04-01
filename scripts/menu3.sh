@@ -60,7 +60,7 @@ fim="\033[0;37m"
 clear
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 echo ""
-echo -e $amarelo"[1]"$fim $branco"FERRAMENTAS"$fim
+echo -e $branco"FERRAMENTAS"$fim
 echo ""
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 echo -e $amarelo"[1]"$fim $branco"MOSTRAR NUMERO DE CONEXÕES"$fim
@@ -155,8 +155,6 @@ uinstall-script
 ;;
 9)
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-sleep 2
-clear
 menu
 ;;
 *)

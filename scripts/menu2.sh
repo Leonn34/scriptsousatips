@@ -62,7 +62,7 @@ clear
   # MENU2 OPCAO 3 (SERVIÇOS)
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 echo ""
-echo -e $amarelo"[1]"$fim $branco"GERENCIADOR DE SERVIÇOS"$fim
+echo -e $branco"GERENCIADOR DE SERVIÇOS"$fim
 echo ""
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 echo -e $amarelo"[1]"$fim $branco"ATIVAR STUNNEL4"$fim
@@ -73,13 +73,11 @@ echo -e $amarelo"[3]"$fim $branco"ATIVAR SOCKS5"$fim
 sleep 0.2
 echo -e $amarelo"[4]"$fim $branco"VOLTAR AO MENU PRINCIPAL"$fim
 sleep 0.2
-echo -e $amarelo"[5]"$fim $branco"SAIR"$fim
-sleep 0.2
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 sleep 0.2
 echo ""
 
-read -p " DIGITE SUA OPÇÃO: [1-5] " opcao
+read -p " DIGITE SUA OPÇÃO: [1-4] " opcao
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 
 echo -e $cinzaClaro" OPÇÃO ESCOLHIDA:"$fim $branco$opcao$fim
@@ -88,9 +86,6 @@ case $opcao in
 
 1)
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-echo -e $amarelo"AGUARDE..."$fim
-echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-sleep 2
 ativarstunnel
 ;;
 2)
@@ -138,6 +133,7 @@ echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 menu
 ;;
 *)
+echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 echo -e $vermelhoClaro"OPÇÃO INVÁLIDA!!!"$fim
 sleep 4
 menu2
