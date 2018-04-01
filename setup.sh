@@ -12,7 +12,7 @@
 pret="\033[1;30m"
 verm="\033[1;31m"
 verd="\033[1;32m"
-amar="\033[1;33m" 
+amar="\033[1;33m"
 azul="\033[1;34m"
 mag="\033[1;35m"
 cian="\033[1;36m"
@@ -28,18 +28,17 @@ echo -e $verd"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 sleep 2
 echo ""
 echo -e $verd"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-echo -e $bra"Este script irá:"$fim
+echo -e $bra"ESTE SCRIPT FARÁ AS SEGUINTES ALTERAÇÕES:"$fim
 sleep 1
 echo -e $verd"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 sleep 1
-echo -e $bra" ● Instalar e configurar o proxy squid nas portas"$fim 
-echo -e $bra"80, 3128, 8080 e 8799 para permitir,"$fim
-echo -e $bra"conexões SSH para este servidor"$fim
+echo -e $bra" ● CONFIGURAR O PROXY SQUID NAS PORTAS:"$fim
+echo -e $bra"80, 3128, 8080 e 8799 PERMITIR AS,"$fim
+echo -e $bra"CONEXÕES SSH DO SERVIDOR"$fim
 sleep 2
-echo -e $bra" ● Configurar o OpenSSH para rodar nas portas 22 e 443"$fim
+echo -e $bra" ● CONFIGURAR O OPENSSH NAS PORTAS 22 e 443"$fim
 sleep 2
-echo -e $bra" ● Instalar um conjunto de scripts como comandos do" 
-echo -e $bra"sistema para o gerenciamento de usuários"$fim
+echo -e $bra" ● INSTALAR UM MENU DE GERENCIAMENTO DE USUÁRIOS"$fim
 sleep 2
 echo -e $verd"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 sleep 2
@@ -62,21 +61,21 @@ fi
 if [ -f "/root/usuarios.db" ]
 then
 	echo ""
-	echo -e $amar"Uma base de dados de usuários ('usuarios.db') foi encontrada!"$fim
-	echo -e $amar"Deseja mantê-la (preservando o limite de conexões simultâneas dos usuários)"$fim
-	echo -e $amar"ou criar uma nova base de dados?"$fim
+	echo -e $amar"ENCONTRAMOS UMA BASE DE DADOS ('usuarios.db')"$fim
+	echo -e $amar"DESEJA MANTÊ-LA? (preservando o limite de conexões simultâneas dos usuários)"$fim
+	echo -e $amar"OU CRIAR UMA NOVA?"$fim
 	echo ""
-	echo -e $verd"[1] Manter Base de Dados Atual"$fim
-	echo -e $verd"[2] Criar uma Nova Base de Dados"$fim
+	echo -e $verd"[1] MANTER BANCO DE DADOS"$fim
+	echo -e $verd"[2] CRIAR UM NOVO BANCO DE DADOS"$fim
 	echo ""
-	read -p "Opção?: " -e -i 1 optiondb
+	read -p "OPÇÃO?: " -e -i 1 optiondb
 else
 	awk -F : '$3 >= 500 { print $1 " 1" }' /etc/passwd | grep -v '^nobody' > /root/usuarios.db
 fi
 echo ""
-read -p "Deseja ativar a compressão SSH (pode aumentar o consumo de RAM)? [s/n]) " -e -i n sshcompression
+read -p "ATIVAR COMPRESSÃO SSH (pode aumentar o consumo de RAM)? [s/n]) " -e -i n sshcompression
 echo ""
-echo -e $verd"Aguarde a configuração automática"$fim
+echo -e $verd"AGUARDE...ISSO PODE DEMORAR ALGUNS MINUTOS..."$fim
 echo ""
 sleep 3
 apt-get update -y >/dev/null 2>/dev/null
@@ -128,70 +127,70 @@ if [ -f "/usr/sbin/ufw" ] ; then
 fi
 if [ -d "/etc/squid3/" ]
 then
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/squid1.txt -O /tmp/sqd1
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/squid1.txt -O /tmp/sqd1
 	echo "acl url3 dstdomain -i $ipdovps" > /tmp/sqd2
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/squid2.txt -O /tmp/sqd3
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/squid2.txt -O /tmp/sqd3
 	cat /tmp/sqd1 /tmp/sqd2 /tmp/sqd3 > /etc/squid3/squid.conf
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/payload.txt -O /etc/squid3/payload.txt
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/payload.txt -O /etc/squid3/payload.txt
 	echo " " >> /etc/squid3/payload.txt
 	grep -v "^Port 443" /etc/ssh/sshd_config > /tmp/ssh && mv /tmp/ssh /etc/ssh/sshd_config
 	echo "Port 443" >> /etc/ssh/sshd_config
 	grep -v "^PasswordAuthentication yes" /etc/ssh/sshd_config > /tmp/passlogin && mv /tmp/passlogin /etc/ssh/sshd_config
 	echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/addhost.sh -O /bin/addhost
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/addhost.sh -O /bin/addhost
 	chmod +x /bin/addhost
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/alterarsenha.sh -O /bin/alterarsenha
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/alterarsenha.sh -O /bin/alterarsenha
 	chmod +x /bin/alterarsenha
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/criarusuario2.sh -O /bin/criarusuario
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/criarusuario2.sh -O /bin/criarusuario
 	chmod +x /bin/criarusuario
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/delhost.sh -O /bin/delhost
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/delhost.sh -O /bin/delhost
 	chmod +x /bin/delhost
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/expcleaner2.sh -O /bin/expcleaner
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/expcleaner2.sh -O /bin/expcleaner
 	chmod +x /bin/expcleaner
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/mudardata.sh -O /bin/mudardata
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/mudardata.sh -O /bin/mudardata
 	chmod +x /bin/mudardata
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/remover.sh -O /bin/remover
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/remover.sh -O /bin/remover
 	chmod +x /bin/remover
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/sshlimiter2.sh -O /bin/sshlimiter
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/sshlimiter2.sh -O /bin/sshlimiter
 	chmod +x /bin/sshlimiter
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/alterarlimite.sh -O /bin/alterarlimite
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/alterarlimite.sh -O /bin/alterarlimite
 	chmod +x /bin/alterarlimite
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/ajuda.sh -O /bin/ajuda
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/ajuda.sh -O /bin/ajuda
 	chmod +x /bin/ajuda
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/sshmonitor2.sh -O /bin/sshmonitor
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/sshmonitor2.sh -O /bin/sshmonitor
 	chmod +x /bin/sshmonitor
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/menu.sh -O /bin/menu
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/menu.sh -O /bin/menu
 	chmod +x /bin/menu
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/atualizar.sh -O /bin/atualizar
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/atualizar.sh -O /bin/atualizar
 	chmod +x /bin/atualizar
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/clearcache.sh -O /bin/clearcache
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/clearcache.sh -O /bin/clearcache
 	chmod +x /bin/clearcache
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/badudp.sh -O /bin/badudp
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/badudp.sh -O /bin/badudp
 	chmod +x /bin/badudp
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/userbkp.sh -O /bin/userbkp
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/userbkp.sh -O /bin/userbkp
 	chmod +x /bin/userbkp
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/socks.py -O /bin/socks.py
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/socks -O /bin/socks
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/socks.py -O /bin/socks.py
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/socks -O /bin/socks
 	chmod +x /bin/socks
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/setup.sh -O /bin/setup.sh
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/setup.sh -O /bin/setup.sh
 	chmod +x /bin/setup.sh
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/att.sh -O /bin/att
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/att.sh -O /bin/att
 	chmod +x /bin/att
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/ver -O /bin/ver
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/ver1 -O /bin/ver1
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/testeconexao -O /bin/testeconexao
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/ver -O /bin/ver
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/ver1 -O /bin/ver1
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/testeconexao -O /bin/testeconexao
 	chmod +x /bin/testeconexao
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/speedtest.py -O /bin/speedtest.py
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/uinstall-script -O /bin/uinstall-script
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/speedtest.py -O /bin/speedtest.py
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/uinstall-script -O /bin/uinstall-script
 	chmod +x /bin/uinstall-script
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/limiteconexao -O /bin/limiteconexao
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/limiteconexao -O /bin/limiteconexao
 	chmod +x /bin/limiteconexao
 	wget https://raw.githubusercontent.com/Leonn34/scripts/master/ativarstunnel.sh -O /bin/ativarstunnel
 	chmod +x /bin/ativarstunnel
 	wget https://raw.githubusercontent.com/Leonn34/scripts/master/desativarstunnel.sh -O /bin/desativarstunnel
 	chmod +x /bin/desativarstunnel
 
-	
+
 	if [ ! -f "/etc/init.d/squid3" ]
 	then
 		service squid3 reload > /dev/null
@@ -207,64 +206,64 @@ then
 fi
 if [ -d "/etc/squid/" ]
 then
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/squid1.txt -O /tmp/sqd1
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/squid1.txt -O /tmp/sqd1
 	echo "acl url3 dstdomain -i $ipdovps" > /tmp/sqd2
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/squid.txt -O /tmp/sqd3
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/squid.txt -O /tmp/sqd3
 	cat /tmp/sqd1 /tmp/sqd2 /tmp/sqd3 > /etc/squid/squid.conf
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/payload.txt -O /etc/squid/payload.txt
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/payload.txt -O /etc/squid/payload.txt
 	echo " " >> /etc/squid/payload.txt
 	grep -v "^Port 443" /etc/ssh/sshd_config > /tmp/ssh && mv /tmp/ssh /etc/ssh/sshd_config
 	echo "Port 443" >> /etc/ssh/sshd_config
 	grep -v "^PasswordAuthentication yes" /etc/ssh/sshd_config > /tmp/passlogin && mv /tmp/passlogin /etc/ssh/sshd_config
 	echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/2/addhost.sh -O /bin/addhost
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/2/addhost.sh -O /bin/addhost
 	chmod +x /bin/addhost
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/alterarsenha.sh -O /bin/alterarsenha
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/alterarsenha.sh -O /bin/alterarsenha
 	chmod +x /bin/alterarsenha
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/criarusuario2.sh -O /bin/criarusuario
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/criarusuario2.sh -O /bin/criarusuario
 	chmod +x /bin/criarusuario
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/2/delhost.sh -O /bin/delhost
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/2/delhost.sh -O /bin/delhost
 	chmod +x /bin/delhost
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/expcleaner2.sh -O /bin/expcleaner
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/expcleaner2.sh -O /bin/expcleaner
 	chmod +x /bin/expcleaner
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/mudardata.sh -O /bin/mudardata
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/mudardata.sh -O /bin/mudardata
 	chmod +x /bin/mudardata
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/remover.sh -O /bin/remover
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/remover.sh -O /bin/remover
 	chmod +x /bin/remover
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/sshlimiter2.sh -O /bin/sshlimiter
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/sshlimiter2.sh -O /bin/sshlimiter
 	chmod +x /bin/sshlimiter
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/alterarlimite.sh -O /bin/alterarlimite
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/alterarlimite.sh -O /bin/alterarlimite
 	chmod +x /bin/alterarlimite
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/ajuda.sh -O /bin/ajuda
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/ajuda.sh -O /bin/ajuda
 	chmod +x /bin/ajuda
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/sshmonitor2.sh -O /bin/sshmonitor
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/sshmonitor2.sh -O /bin/sshmonitor
 	chmod +x /bin/sshmonitor
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/menu.sh -O /bin/menu
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/menu.sh -O /bin/menu
 	chmod +x /bin/menu
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/atualizar.sh -O /bin/atualizar
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/atualizar.sh -O /bin/atualizar
 	chmod +x /bin/atualizar
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/clearcache.sh -O /bin/clearcache
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/clearcache.sh -O /bin/clearcache
 	chmod +x /bin/clearcache
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/badudp.sh -O /bin/badudp
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/badudp.sh -O /bin/badudp
 	chmod +x /bin/badudp
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/userbkp.sh -O /bin/userbkp
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/userbkp.sh -O /bin/userbkp
 	chmod +x /bin/userbkp
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/socks.py -O /bin/socks.py
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/socks -O /bin/socks
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/socks.py -O /bin/socks.py
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/socks -O /bin/socks
 	chmod +x /bin/socks
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/setup.sh -O /bin/setup.sh
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/setup.sh -O /bin/setup.sh
 	chmod +x /bin/setup.sh
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/att.sh -O /bin/att
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/att.sh -O /bin/att
 	chmod +x /bin/att
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/ver -O /bin/ver
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/ver1 -O /bin/ver1
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/testeconexao -O /bin/testeconexao
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/ver -O /bin/ver
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/ver1 -O /bin/ver1
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/testeconexao -O /bin/testeconexao
 	chmod +x /bin/testeconexao
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/speedtest.py -O /bin/speedtest.py
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/speedtest.py -O /bin/speedtest.py
 	chmod +x /bin/speedtest.py
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/uinstall-script -O /bin/uinstall-script
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/uinstall-script -O /bin/uinstall-script
 	chmod +x /bin/uinstall-script
-	wget https://raw.githubusercontent.com/Leonn34/script-2/master/scripts/limiteconexao -O /bin/limiteconexao
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/limiteconexao -O /bin/limiteconexao
 	chmod +x /bin/limiteconexao
 	wget https://raw.githubusercontent.com/Leonn34/scripts/master/ativarstunnel.sh -O /bin/ativarstunnel
 	chmod +x /bin/ativarstunnel
@@ -287,9 +286,10 @@ fi
 rm /bin/setup.sh
 clear
 echo ""
-echo -e $verd"Proxy Squid Instalado e rodando nas portas: 80, 3128, 8080 e 8799"$fim
-echo -e $verd"OpenSSH rodando nas portas 22 e 443"$fim
-echo -e $verd"Para ver os comandos disponíveis use o comando: menu"$fim
+echo -e $verd"PROXY SQUID RODANDO NAS PORTAS: 80, 3128, 8080 e 8799"$fim
+echo -e $verd"OPENSSH RODANDO NAS PORTAS: 22 e 443"$fim
+echo -e $verd"PARA ENTRAR NO MENU, DIGITE O COMANDO: menu"$fim
+echo -e $verd"OBRIGADO POR INSTALAR O SCRIPT!"$fim
 echo ""
 sleep 7
 echo -e $bra"ENTRANDO NO MENU EM..."$fim

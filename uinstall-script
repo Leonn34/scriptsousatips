@@ -24,7 +24,7 @@ fim="\033[0;37m"
 reinstalar () {
 apt-get update -y
 apt-get upgrade -y
-wget -c -P /bin https://raw.githubusercontent.com/Leonn34/script-2/master/setup.sh
+wget -c -P /bin https://raw.githubusercontent.com/Leonn34/testes/master/setup.sh
 chmod +x /bin/setup.sh
 bash /bin/setup.sh
 }
@@ -32,29 +32,33 @@ bash /bin/setup.sh
 remove () {
 echo -e ""
 echo -e ""
-rm /bin/criarusuario >/dev/null 2>/dev/null
-rm /bin/expcleaner >/dev/null 2>/dev/null
-rm /bin/sshlimiter >/dev/null 2>/dev/null
+
 rm /bin/addhost >/dev/null 2>/dev/null
-rm /bin/delhost >/dev/null 2>/dev/null
-rm /bin/sshmonitor >/dev/null 2>/dev/null
 rm /bin/ajuda >/dev/null 2>/dev/null
-rm /bin/menu >/dev/null 2>/dev/null
-rm /bin/atualizar >/dev/null 2>/dev/null
-rm /bin/clearcache >/dev/null 2>/dev/null
-rm /bin/badudp >/dev/null 2>/dev/null
-rm /bin/userbkp >/dev/null 2>/dev/null
-rm /bin/socks.py >/dev/null 2>/dev/null
-rm /bin/setup.sh >/dev/null 2>/dev/null
-rm /bin/att >/dev/null 2>/dev/null
-rm /bin/ver >/dev/null 2>/dev/null
-rm /bin/ver1 >/dev/null 2>/dev/null
-rm /bin/testeconexao >/dev/null 2>/dev/null
-rm /bin/speedtest.py >/dev/null 2>/dev/null
-rm /bin/alterarsenha >/dev/null 2>/dev/null
 rm /bin/alterarlimite >/dev/null 2>/dev/null
+rm /bin/alterarsenha >/dev/null 2>/dev/null
+rm /bin/ativarstunnel >/dev/null 2>/dev/null
+rm /bin/att >/dev/null 2>/dev/null
+rm /bin/atualizar >/dev/null 2>/dev/null
+rm /bin/badudp >/dev/null 2>/dev/null
+rm /bin/clearcache >/dev/null 2>/dev/null
+rm /bin/criarusuario >/dev/null 2>/dev/null
+rm /bin/delhost >/dev/null 2>/dev/null
+rm /bin/desativarstunnel >/dev/null 2>/dev/null
+rm /bin/expcleaner >/dev/null 2>/dev/null
+rm /bin/limiteconexao >/dev/null 2>/dev/null
+rm /bin/menu >/dev/null 2>/dev/null
+rm /bin/mudardata >/dev/null 2>/dev/null
 rm /bin/remover >/dev/null 2>/dev/null
+rm /bin/setup.sh >/dev/null 2>/dev/null
 rm /bin/socks >/dev/null 2>/dev/null
+rm /bin/socks.py >/dev/null 2>/dev/null
+rm /bin/speedtest.py >/dev/null 2>/dev/null
+rm /bin/sshlimiter >/dev/null 2>/dev/null
+rm /bin/sshmonitor >/dev/null 2>/dev/null
+rm /bin/testeconexao >/dev/null 2>/dev/null
+rm /bin/uinstall-script >/dev/null 2>/dev/null
+rm /bin/userbkp >/dev/null 2>/dev/null
 
 ssh="/etc/ssh/sshbak"
 if [ ! -f "$ssh" ]

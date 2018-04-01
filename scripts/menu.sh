@@ -61,7 +61,7 @@ clear
 
 rm /bin/ver1 > /dev/null 2> /dev/null
 
-wget -c -P /bin https://raw.githubusercontent.com/Leonn34/script-2/master/ver1 > /dev/null 2> /dev/null
+wget -c -P /bin https://raw.githubusercontent.com/Leonn34/tetes/master/ver1 > /dev/null 2> /dev/null
 
 cd /bin
 
@@ -75,7 +75,7 @@ clear
   echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
   apt-get install figlet -y >/dev/null
   tput setaf 3; tput bold; figlet -f slant Script SSH; tput sgr0
-  echo -e $purpleClaro$ver$fim | xargs echo -ne $branco"                                     VER. BETA:"$fim; echo ""
+  echo -e $purpleClaro$ver$fim | xargs echo -ne $branco"                                          VER.:"$fim; echo ""
   echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
   sleep 0.2
   echo -e $amarelo" Powered by | Sousa Tips ®"$fim
@@ -86,12 +86,12 @@ if [ "$equal" = "" ]; then
 echo -ne ""
 #echo -e $branco" NÃO EXISTEM ATUALIZAÇÕES DISPONÍVEIS!"$fim
 else
-echo -e $amarelo" HÁ ATUALIZAÇÕES DISPONÍVEIS!"$fim
+echo -e $amarelo" EXISTEM ATUALIZAÇÕES DISPONÍVEIS!"$fim
 #mv -f $arq1 $arq
 fi
 #######FIM DE ATUALIZAÇÃO############################
   echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-  echo -e $cyan"                                     USUÁRIOS ON:"$fim $verdeClaro$(ps x | grep hd | grep -v root | grep priv |wc -l)$fim 
+  echo -e $cyan"                                     USUÁRIOS ON:"$fim $verdeClaro$(ps x | grep hd | grep -v root | grep priv |wc -l)$fim
   echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
   sleep 0.2
   # MENU
@@ -138,17 +138,17 @@ fi
   echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
   sleep 0.2
   echo ""
-  
+
   read -p " DIGITE SUA OPÇÃO: [01-20] " opcao
   echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-  
+
   echo -e $cinzaClaro" OPÇÃO ESCOLHIDA:"$fim $branco$opcao$fim
 
   case $opcao in
 
     1)
       echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-      echo -e $amarelo"Aguarde..."$fim
+      echo -e $amarelo"AGUARDE..."$fim
       echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
       sleep 2
       atualizar
@@ -257,7 +257,7 @@ fi
       	read -p "[1-2] " opcao
 	echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
       	echo -e $cinzaClaro" OPÇÃO ESCOLHIDA:"$fim $branco$opcao$fim
-	
+
         case $opcao in
           1)
             socks
@@ -281,10 +281,9 @@ fi
       clear
       testeconexao
       ;;
-    19)  
+    19)
       clear
       echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-      #echo -e $amarelo"TESTANDO VELOCIDADE DO SERVIDOR..."$fim
       sleep 2
       clear
       uinstall-script
