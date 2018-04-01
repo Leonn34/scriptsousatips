@@ -1,0 +1,81 @@
+#!/bin/bash
+#Criado por Elton Sousa
+#Script para escolher em qual porta rodar o SOCKS
+
+p1=80
+p2=8080
+p3=8799
+p4=3128
+
+clear
+echo "**********************************"
+echo "CONFIGURANDO O SOCKS"
+echo "Powered by Elton Sousa"
+echo "**********************************"
+echo ""
+echo "Qual porta deseja usar o SOCKS?"
+echo ""
+echo "[1]" "80"
+echo "[2]" "8080"
+echo "[3]" "8799"
+echo "[4]" "3128"
+echo "[5]" "CANCELAR"
+echo "**********************************"
+echo ""
+read -p "[1-5]" opcao
+echo "SUA OPÇÃO: " $opcao
+
+case $opcao in
+
+	1)
+	clear
+	cd /bin
+	screen -dmS screen python socks.py $p1
+	echo "SOCKS RODANDO NA PORTA" $p1
+	sleep 3
+	cd
+	clear
+	menu
+	;;
+	2)
+	clear
+	cd /bin
+	screen -dmS screen python socks.py $p2
+	echo "SOCKS RODANDO NA PORTA" $p2
+	sleep 3
+	cd
+	clear
+	menu
+	;;
+	3)
+	clear
+	cd /bin
+	screen -dmS screen python socks.py $p3
+	echo "SOCKS RODANDO NA PORTA" $p3
+	sleep 3
+	cd
+	clear
+	menu
+	;;
+	4)
+	clear
+	cd /bin
+	screen -dmS screen python socks.py $p4
+	echo "SOCKS RODANDO NA PORTA" $p4
+	sleep 3
+	cd
+	clear
+	menu
+	;;
+	5)
+	clear
+	echo "SAINDO..."
+	sleep 3
+	menu
+	;;
+	*)
+	echo "Opção inválida!"
+	sleep 1
+	clear
+	socks
+esac
