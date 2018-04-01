@@ -71,7 +71,7 @@ equal=$(diff -q $arq $arq1)
 ver=$(cat $arq)
 
 clear
-  #TITULO
+  #MENU PRINCIPAL
   echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
   apt-get install figlet -y >/dev/null
   tput setaf 3; tput bold; figlet -f slant Script SSH; tput sgr0
@@ -97,49 +97,19 @@ fi
   # MENU
   echo -e $amarelo"[1]"$fim $branco"APLICAR ATUALIZAÇÕES"$fim
   sleep 0.2
-  echo -e $amarelo"[2]"$fim $branco"CRIAR USUÁRIO SSH"$fim
+  echo -e $amarelo"[2]"$fim $branco"GERENCIAR USUÁRIOS SSH"$fim
   sleep 0.2
-  echo -e $amarelo"[3]"$fim $branco"CRIAR BACKUP USUÁRIO"$fim
+  echo -e $amarelo"[3]"$fim $branco"SERVIÇOS"$fim
   sleep 0.2
-  echo -e $amarelo"[4]"$fim $branco"ALTERAR DATA DO USUÁRIO"$fim
+  echo -e $amarelo"[4]"$fim $branco"FERRAMENTAS"$fim
   sleep 0.2
-  echo -e $amarelo"[5]"$fim $branco"ALTERAR LIMITE DE CONEXÕES"$fim
-  sleep 0.2
-  echo -e $amarelo"[6]"$fim $branco"MUDAR SENHA"$fim
-  sleep 0.2
-  echo -e $amarelo"[7]"$fim $branco"REMOVER USUÁRIOS VENCIDOS"$fim
-  sleep 0.2
-  echo -e $amarelo"[8]"$fim $branco"REMOVER USUÁRIO"$fim
-  sleep 0.2
-  echo -e $amarelo"[9]"$fim $branco"MOSTRA NÚMERO DE CONEXÕES"$fim
-  sleep 0.2
-  echo -e $amarelo"[10]"$fim $branco"LIMITAR CONEXÕES"$fim $vermelhoClaro"[screen]"$fim
-  sleep 0.2
-  echo -e $amarelo"[11]"$fim $branco"ADICIONAR HOST"$fim
-  sleep 0.2
-  echo -e $amarelo"[12]"$fim $branco"REMOVER HOST"$fim
-  sleep 0.2
-  echo -e $amarelo"[13]"$fim $branco"LIMPAR CACHÊ"$fim
-  sleep 0.2
-  echo -e $amarelo"[14]"$fim $branco"BADUDP"$fim $vermelhoClaro"[screen]"$fim
-  sleep 0.2
-  echo -e $amarelo"[15]"$fim $branco"ATIVAR STUNNEL4"$fim $vermelhoClaro"[SSL]"$fim
-  sleep 0.2
-  echo -e $amarelo"[16]"$fim $branco"DESATIVAR STUNNEL4"$fim $vermelhoClaro"[SSL]"$fim
-  sleep 0.2
-  echo -e $amarelo"[17]"$fim $branco"INICIAR SOCKS"$fim $vermelhoClaro"[screen]"$fim
-  sleep 0.2
-  echo -e $amarelo"[18]"$fim $branco"TESTE DE VELOCIDADE"$fim
-  sleep 0.2
-  echo -e $amarelo"[19]"$fim $branco"DESINSTALAR SCRIPT"$fim
-  sleep 0.2
-  echo -e $amarelo"[20]"$fim $branco"SAIR"$fim
+  echo -e $amarelo"[5]"$fim $branco"SAIR"$fim
   sleep 0.2
   echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
   sleep 0.2
   echo ""
 
-  read -p " DIGITE SUA OPÇÃO: [01-20] " opcao
+  read -p " DIGITE SUA OPÇÃO: [1-5] " opcao
   echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 
   echo -e $cinzaClaro" OPÇÃO ESCOLHIDA:"$fim $branco$opcao$fim
@@ -155,140 +125,17 @@ fi
       ;;
     2)
       echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-      criarusuario
+      menu1
       ;;
     3)
       echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-      userbkp
+      menu2
       ;;
     4)
       echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-      mudardata
+      menu3
       ;;
     5)
-      echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-      alterarlimite
-      ;;
-    6)
-      echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-      alterarsenha
-      ;;
-    7)
-      echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-      expcleaner
-      ;;
-    8)
-      echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-      remover
-      ;;
-    9)
-      echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-      sshmonitor
-      ;;
-    10)
-      clear
-      echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-      limiteconexao
-      ;;
-    11)
-      echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-      addhost
-      ;;
-    12)
-      echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-      delhost
-      ;;
-    13)
-      echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-      clearcache
-      ;;
-    14)
-      clear
-      echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-      echo -e $amarelo"COMANDOS PARA RODAR O BADUDP:"$fim
-      sleep 2
-      echo ""
-      echo -e $branco"1º - ABRA UMA SESSÃO"$fim $verdeClaro"SCREEN"$fim
-      sleep 2
-      echo -e $branco"DIGITE:"$fim $vermelhoClaro"screen"$fim$branco", EM SEGUIDA APERTE"$fim $verdeClaro"ENTER"$fim
-      sleep 2
-      echo -e $branco"2º - DIGITE"$fim $verdeClaro"badudp"$fim$branco", E APERTE"$fim $verdeClaro"ENTER"$fim
-      sleep 2
-      echo -e $branco"3º - PARA SAIR E DEIXAR A SESSÃO RODANDO,"$fim
-      sleep 2
-      echo -e $branco"ENTRE COM:"$fim $verdeClaro"Ctrl+A+D"$fim
-      sleep 2
-      echo ""
-      echo -e $amarelo"OBS.: A CADA VEZ QUE FOR REINICIADO A VPS,"$fim
-      echo -e $amarelo"REPITA OS MESMOS PASSOS!"$fim
-      echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-      echo ""
-      echo "ENTER para voltar"
-      read -p ""
-      sleep 1
-      menu
-      ;;
-    15)
-      echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-      ativarstunnel
-      ;;
-    16)
-      echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-      desativarstunnel
-      ;;
-    17)
-    	clear
-	echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-      	echo -e $amarelo"Para que o SOCKS funcione corretamente,"$fim
-      	echo -e $amarelo"Comente a porta a ser utilizada no squid.conf"$fim
-      	echo -e $branco"Ex.: nano /etc/squid3/squid.conf"$fim
-      	echo ""
-	echo -e $vermelhoClaro"#"$fim$verdeClaro"http_port 80"$fim
-      	echo -e $verdeClaro"http_port 3128"$fim
-      	echo -e $verdeClaro"http_port 8080"$fim
-      	echo -e $verdeClaro"http_port 8799"$fim
-	echo ""
-      	echo -e $amarelo"Depois reinicie:"$fim $branco"service squid3 restart"$fim
-	echo ""
-      	echo -e $verdeClaro"Deseja continuar?"$fim
-      	echo -e $branco"[1]"$fim $verdeClaro"SIM"$fim
-      	echo -e $branco"[2]"$fim $vermelhoClaro"NÃO"$fim
-	echo ""
-      	read -p "[1-2] " opcao
-	echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-      	echo -e $cinzaClaro" OPÇÃO ESCOLHIDA:"$fim $branco$opcao$fim
-
-        case $opcao in
-          1)
-            socks
-            ;;
-          2)
-            clear
-            menu
-            ;;
-          *)
-	          echo "Opção inválida!"
-	          sleep 1
-	          clear
-            menu
-        esac
-      ;;
-    18)
-      clear
-      echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-      echo -e $amarelo"TESTANDO VELOCIDADE DO SERVIDOR..."$fim
-      sleep 2
-      clear
-      testeconexao
-      ;;
-    19)
-      clear
-      echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-      sleep 2
-      clear
-      uinstall-script
-      ;;
-    20)
       echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
       echo -e $branco"Saindo..."$fim
       echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim

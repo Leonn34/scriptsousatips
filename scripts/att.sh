@@ -71,6 +71,9 @@ rm /bin/desativarstunnel >/dev/null 2>/dev/null
 rm /bin/expcleaner >/dev/null 2>/dev/null
 rm /bin/limiteconexao >/dev/null 2>/dev/null
 rm /bin/menu >/dev/null 2>/dev/null
+rm /bin/menu1 >/dev/null 2>/dev/null
+rm /bin/menu2 >/dev/null 2>/dev/null
+rm /bin/menu2 >/dev/null 2>/dev/null
 rm /bin/mudardata >/dev/null 2>/dev/null
 rm /bin/remover >/dev/null 2>/dev/null
 rm /bin/setup.sh >/dev/null 2>/dev/null
@@ -123,6 +126,12 @@ wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/sshmonitor2
 chmod +x /bin/sshmonitor
 wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/menu.sh -O /bin/menu
 chmod +x /bin/menu
+wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/menu1.sh -O /bin/menu1
+chmod +x /bin/menu1
+wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/menu2.sh -O /bin/menu2
+chmod +x /bin/menu2
+wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/menu3.sh -O /bin/menu3
+chmod +x /bin/menu3
 wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/atualizar.sh -O /bin/atualizar
 chmod +x /bin/atualizar
 wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/clearcache.sh -O /bin/clearcache
