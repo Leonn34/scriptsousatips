@@ -18,3 +18,7 @@ read -p ": " bannerssh
 echo "$bannerssh" > /etc/bannerssh
 service ssh restart 1> /dev/null 2>/dev/null
 service sshd restart 1>/dev/null 2>/dev/null
+echo "ALTERADO COM SUCESSO!"
+sleep 4
+exit
+menu
