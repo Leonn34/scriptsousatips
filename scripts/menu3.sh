@@ -79,7 +79,9 @@ echo -e $amarelo"[7]"$fim $branco"TESTE DE VELOCIDADE"$fim
 sleep 0.2
 echo -e $amarelo"[8]"$fim $branco"DESINSTALAR O SCRIPT"$fim
 sleep 0.2
-echo -e $amarelo"[9]"$fim $branco"VOLTAR AO MENU PRINCIPAL"$fim
+echo -e $amarelo"[9]"$fim $branco"EDITAR O BANNER"$fim
+sleep 0.2
+echo -e $amarelo"[10]"$fim $branco"VOLTAR AO MENU PRINCIPAL"$fim
 sleep 0.2
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 sleep 0.2
@@ -154,6 +156,10 @@ clear
 uinstall-script
 ;;
 9)
+echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
+banner
+;;
+10)
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 menu
 ;;
