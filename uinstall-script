@@ -41,6 +41,7 @@ rm /bin/ativarstunnel >/dev/null 2>/dev/null
 rm /bin/att >/dev/null 2>/dev/null
 rm /bin/atualizar >/dev/null 2>/dev/null
 rm /bin/badudp >/dev/null 2>/dev/null
+rm /bin/banner >/dev/null 2>/dev/null
 rm /bin/clearcache >/dev/null 2>/dev/null
 rm /bin/criarusuario >/dev/null 2>/dev/null
 rm /bin/delhost >/dev/null 2>/dev/null
