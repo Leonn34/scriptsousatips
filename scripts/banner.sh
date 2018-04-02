@@ -1,5 +1,6 @@
 #!/bin/bash
 
+clear
 sshd_config_bak=$(cat /etc/ssh/sshd_config | grep -v "Banner")
 echo "$sshd_config_bak" > /etc/ssh/sshd_config
 echo "Banner /etc/bannerssh" >> /etc/ssh/sshd_config
