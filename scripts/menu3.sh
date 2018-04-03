@@ -59,9 +59,7 @@ fim="\033[0;37m"
 # MENU3 OPCAO 4 (FERRAMENTAS)
 clear
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-echo ""
-echo -e $branco"FERRAMENTAS"$fim
-echo ""
+echo -e $branco" FERRAMENTAS"$fim
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 echo -e $amarelo"[1]"$fim $branco"MOSTRAR NUMERO DE CONEXÕES"$fim
 sleep 0.2

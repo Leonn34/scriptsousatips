@@ -10,15 +10,15 @@ if [ -f /etc/bannerssh ]
 then
 banner=$(cat /etc/bannerssh)
 else
-banner="Não há um banner no momento"
+banner="NÃO EXISTE NENHUM BANNER!"
+sllep 5
 fi
 echo -e "\033[1;32mBanner atual\n\n\033[1;37m$banner\n\033[0m"
-echo "Qual banner deseja adicionar (ctrl + c para sair )"
+echo "DIGITE, OU COLE SUA MENSAGEM DO BANNER: (CANCELAR CTRL+C)"
 read -p ": " bannerssh
 echo "$bannerssh" > /etc/bannerssh
 service ssh restart 1> /dev/null 2>/dev/null
 service sshd restart 1>/dev/null 2>/dev/null
 echo "ALTERADO COM SUCESSO!"
 sleep 4
-exit
 menu
