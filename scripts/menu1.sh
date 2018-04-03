@@ -64,23 +64,23 @@ echo ""
 echo -e $branco"GERENCIADOR DE USUARIOS"$fim
 echo ""
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-echo -e $amarelo"[1]"$fim $branco"CRIAR USUÁRIOS SSH"$fim
+echo -e $amarelo" [1]"$fim $branco"CRIAR USUÁRIOS SSH"$fim
 sleep 0.2
-echo -e $amarelo"[2]"$fim $branco"CRIAR USUÁRIO TEMPORÁRIO"$fim
+echo -e $amarelo" [2]"$fim $branco"CRIAR USUÁRIO TEMPORÁRIO"$fim
 sleep 0.2
-echo -e $amarelo"[3]"$fim $branco"CRIAR BKP USUÁRIOS"$fim
+echo -e $amarelo" [3]"$fim $branco"CRIAR BKP USUÁRIOS"$fim
 sleep 0.2
-echo -e $amarelo"[4]"$fim $branco"ALTERAR DATA DO USUÁRIO"$fim
+echo -e $amarelo" [4]"$fim $branco"ALTERAR DATA DO USUÁRIO"$fim
 sleep 0.2
-echo -e $amarelo"[5]"$fim $branco"ALTERAR LIMITE DE CONEXÕES"$fim
+echo -e $amarelo" [5]"$fim $branco"ALTERAR LIMITE DE CONEXÕES"$fim
 sleep 0.2
-echo -e $amarelo"[6]"$fim $branco"MUDAR SENHA"$fim
+echo -e $amarelo" [6]"$fim $branco"MUDAR SENHA"$fim
 sleep 0.2
-echo -e $amarelo"[7]"$fim $branco"REMOVER USUÁRIOS VENCIDOS"$fim
+echo -e $amarelo" [7]"$fim $branco"REMOVER USUÁRIOS VENCIDOS"$fim
 sleep 0.2
-echo -e $amarelo"[8]"$fim $branco"REMOVER USUÁRIO"$fim
+echo -e $amarelo" [8]"$fim $branco"REMOVER USUÁRIO"$fim
 sleep 0.2
-echo -e $amarelo"[9]"$fim $branco"VOLTAR AO MENU PRINCIPAL"$fim
+echo -e $amarelo" [9]"$fim $branco"VOLTAR AO MENU PRINCIPAL"$fim
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 sleep 0.2
 echo ""

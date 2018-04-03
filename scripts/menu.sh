@@ -95,15 +95,15 @@ fi
   echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
   sleep 0.2
   # MENU
-  echo -e $amarelo"[1]"$fim $branco"APLICAR ATUALIZAÇÕES"$fim
+  echo -e $amarelo" [1]"$fim $branco"APLICAR ATUALIZAÇÕES"$fim
   sleep 0.2
-  echo -e $amarelo"[2]"$fim $branco"GERENCIAR USUÁRIOS SSH"$fim
+  echo -e $amarelo" [2]"$fim $branco"GERENCIAR USUÁRIOS SSH"$fim
   sleep 0.2
-  echo -e $amarelo"[3]"$fim $branco"SERVIÇOS"$fim
+  echo -e $amarelo" [3]"$fim $branco"SERVIÇOS"$fim
   sleep 0.2
-  echo -e $amarelo"[4]"$fim $branco"FERRAMENTAS"$fim
+  echo -e $amarelo" [4]"$fim $branco"FERRAMENTAS"$fim
   sleep 0.2
-  echo -e $amarelo"[5]"$fim $branco"SAIR"$fim
+  echo -e $amarelo" [5]"$fim $branco"SAIR"$fim
   sleep 0.2
   echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
   sleep 0.2

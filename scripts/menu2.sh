@@ -65,13 +65,13 @@ echo ""
 echo -e $branco"GERENCIADOR DE SERVIÇOS"$fim
 echo ""
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-echo -e $amarelo"[1]"$fim $branco"ATIVAR STUNNEL4"$fim
+echo -e $amarelo" [1]"$fim $branco"ATIVAR STUNNEL4"$fim
 sleep 0.2
-echo -e $amarelo"[2]"$fim $branco"DESATIVAR STUNNEL4 "$fim
+echo -e $amarelo" [2]"$fim $branco"DESATIVAR STUNNEL4 "$fim
 sleep 0.2
-echo -e $amarelo"[3]"$fim $branco"ATIVAR SOCKS5"$fim
+echo -e $amarelo" [3]"$fim $branco"ATIVAR SOCKS5"$fim
 sleep 0.2
-echo -e $amarelo"[4]"$fim $branco"VOLTAR AO MENU PRINCIPAL"$fim
+echo -e $amarelo" [4]"$fim $branco"VOLTAR AO MENU PRINCIPAL"$fim
 sleep 0.2
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 sleep 0.2
