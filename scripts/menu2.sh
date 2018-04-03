@@ -62,7 +62,7 @@ clear
   # MENU2 OPCAO 3 (SERVIÇOS)
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 echo ""
-echo -e $branco"GERENCIADOR DE SERVIÇOS"$fim
+echo -e $branco" GERENCIADOR DE SERVIÇOS"$fim
 echo ""
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 echo -e $amarelo" [1]"$fim $branco"ATIVAR STUNNEL4"$fim

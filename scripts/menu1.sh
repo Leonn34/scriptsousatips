@@ -61,7 +61,7 @@ clear
 # MENU1 (GERENCIAR USUARIOS)
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 echo ""
-echo -e $branco"GERENCIADOR DE USUARIOS"$fim
+echo -e $branco" GERENCIADOR DE USUARIOS"$fim
 echo ""
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 echo -e $amarelo" [1]"$fim $branco"CRIAR USUÁRIOS SSH"$fim
