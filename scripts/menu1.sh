@@ -66,24 +66,26 @@ echo ""
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 echo -e $amarelo"[1]"$fim $branco"CRIAR USUÁRIOS SSH"$fim
 sleep 0.2
-echo -e $amarelo"[2]"$fim $branco"CRIAR BACKUP USUÁRIO SSH"$fim
+echo -e $amarelo"[2]"$fim $branco"CRIAR USUÁRIO TEMPORÁRIO"$fim
 sleep 0.2
-echo -e $amarelo"[3]"$fim $branco"ALTERAR DATA DO USUÁRIO"$fim
+echo -e $amarelo"[3]"$fim $branco"CRIAR BKP USUÁRIOS"$fim
 sleep 0.2
-echo -e $amarelo"[4]"$fim $branco"ALTERAR LIMITE DE CONEXÕES"$fim
+echo -e $amarelo"[4]"$fim $branco"ALTERAR DATA DO USUÁRIO"$fim
 sleep 0.2
-echo -e $amarelo"[5]"$fim $branco"MUDAR SENHA"$fim
+echo -e $amarelo"[5]"$fim $branco"ALTERAR LIMITE DE CONEXÕES"$fim
 sleep 0.2
-echo -e $amarelo"[6]"$fim $branco"REMOVER USUÁRIOS VENCIDOS"$fim
+echo -e $amarelo"[6]"$fim $branco"MUDAR SENHA"$fim
 sleep 0.2
-echo -e $amarelo"[7]"$fim $branco"REMOVER USUÁRIO"$fim
+echo -e $amarelo"[7]"$fim $branco"REMOVER USUÁRIOS VENCIDOS"$fim
 sleep 0.2
-echo -e $amarelo"[8]"$fim $branco"VOLTAR AO MENU PRINCIPAL"$fim
+echo -e $amarelo"[8]"$fim $branco"REMOVER USUÁRIO"$fim
+sleep 0.2
+echo -e $amarelo"[9]"$fim $branco"VOLTAR AO MENU PRINCIPAL"$fim
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 sleep 0.2
 echo ""
 
-read -p " DIGITE SUA OPÇÃO: [1-8] " opcao
+read -p " DIGITE SUA OPÇÃO: [1-9] " opcao
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 echo -e $cinzaClaro" OPÇÃO ESCOLHIDA:"$fim $branco$opcao$fim
 
@@ -95,29 +97,33 @@ criarusuario
 ;;
 2)
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-userbkp
+criarusuariotemporario
 ;;
 3)
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-mudardata
+userbkp
 ;;
 4)
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-alterarlimite
+mudardata
 ;;
 5)
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-alterarsenha
+alterarlimite
 ;;
 6)
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-expcleaner
+alterarsenha
 ;;
 7)
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-remover
+expcleaner
 ;;
 8)
+echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
+remover
+;;
+9)
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 menu
 ;;

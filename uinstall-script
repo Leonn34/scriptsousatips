@@ -44,6 +44,7 @@ rm /bin/badudp >/dev/null 2>/dev/null
 rm /bin/banner >/dev/null 2>/dev/null
 rm /bin/clearcache >/dev/null 2>/dev/null
 rm /bin/criarusuario >/dev/null 2>/dev/null
+rm /bin/criarusuariotemporario >/dev/null 2>/dev/null
 rm /bin/delhost >/dev/null 2>/dev/null
 rm /bin/desativarstunnel >/dev/null 2>/dev/null
 rm /bin/expcleaner >/dev/null 2>/dev/null
@@ -63,11 +64,13 @@ rm /bin/sshmonitor >/dev/null 2>/dev/null
 rm /bin/testeconexao >/dev/null 2>/dev/null
 rm /bin/uinstall-script >/dev/null 2>/dev/null
 rm /bin/userbkp >/dev/null 2>/dev/null
+rm /bin/ver >/dev/null 2>/dev/null
+rm /bin/ver1 >/dev/null 2>/dev/null
 
 ssh="/etc/ssh/sshbak"
 if [ ! -f "$ssh" ]
 then
-  echo ""
+echo ""
 else
 mv -f /etc/ssh/sshbak /etc/ssh/sshd_config
 fi

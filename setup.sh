@@ -93,10 +93,11 @@ rm /bin/alterarsenha >/dev/null 2>/dev/null
 rm /bin/ativarstunnel >/dev/null 2>/dev/null
 rm /bin/att >/dev/null 2>/dev/null
 rm /bin/atualizar >/dev/null 2>/dev/null
-rm /bin/banner >/dev/null 2>/dev/null
 rm /bin/badudp >/dev/null 2>/dev/null
+rm /bin/banner >/dev/null 2>/dev/null
 rm /bin/clearcache >/dev/null 2>/dev/null
 rm /bin/criarusuario >/dev/null 2>/dev/null
+rm /bin/criarusuariotemporario >/dev/null 2>/dev/null
 rm /bin/delhost >/dev/null 2>/dev/null
 rm /bin/desativarstunnel >/dev/null 2>/dev/null
 rm /bin/expcleaner >/dev/null 2>/dev/null
@@ -197,6 +198,8 @@ then
 	chmod +x /bin/limiteconexao
 	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/banner.sh -O /bin/banner
 	chmod +x /bin/banner
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/criarusuariotemporario.sh -O /bin/criarusuariotemporario
+	chmod +x /bin/criarusuariotemporario
 	wget https://raw.githubusercontent.com/Leonn34/scripts/master/ativarstunnel.sh -O /bin/ativarstunnel
 	chmod +x /bin/ativarstunnel
 	wget https://raw.githubusercontent.com/Leonn34/scripts/master/desativarstunnel.sh -O /bin/desativarstunnel
@@ -285,6 +288,8 @@ then
 	chmod +x /bin/limiteconexao
 	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/banner.sh -O /bin/banner
 	chmod +x /bin/banner
+	wget https://raw.githubusercontent.com/Leonn34/testes/master/scripts/criarusuariotemporario.sh -O /bin/criarusuariotemporario
+	chmod +x /bin/criarusuariotemporario
 	wget https://raw.githubusercontent.com/Leonn34/scripts/master/ativarstunnel.sh -O /bin/ativarstunnel
 	chmod +x /bin/ativarstunnel
 	wget https://raw.githubusercontent.com/Leonn34/scripts/master/desativarstunnel.sh -O /bin/desativarstunnel
