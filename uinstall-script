@@ -24,7 +24,7 @@ fim="\033[0;37m"
 reinstalar () {
 apt-get update -y
 apt-get upgrade -y
-wget -c -P /bin https://raw.githubusercontent.com/Leonn34/testes/master/setup.sh
+wget -c -P /bin https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/setup.sh
 chmod +x /bin/setup.sh
 bash /bin/setup.sh
 }
@@ -70,12 +70,13 @@ rm /bin/ver1 >/dev/null 2>/dev/null
 ssh="/etc/ssh/sshbak"
 if [ ! -f "$ssh" ]
 then
-echo ""
+    echo ""
 else
-mv -f /etc/ssh/sshbak /etc/ssh/sshd_config
+    mv -f /etc/ssh/sshbak /etc/ssh/sshd_config
 fi
 apt-get remove squid3 -y 1>/dev/null 2>/dev/null apt-get remove squid -y 1>/dev/null 2>/dev/null apt-get autoremove -y 1>/dev/null 2>/dev/null
 }
+
 clear
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 echo -e $vermelhoClaro" DESINSTALAR OU INSTALAR OUTRO GERENCIADOR?"$fim
@@ -83,7 +84,7 @@ echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 echo ""
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 echo -e $amarelo" [1] DESINSTALAR"$fim
-echo -e $amarelo" [2] INSTALAR OUTRO GERENCIADOR"$fim
+echo -e $amarelo" [2] REINSTALAR"$fim
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 read -p ": " resposta
 case $resposta in

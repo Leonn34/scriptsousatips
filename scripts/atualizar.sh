@@ -24,7 +24,7 @@ clear
 
 rm /bin/att >/dev/null 2>/dev/null
 
-wget -c -P /bin https://raw.githubusercontent.com/Leonn34/testes/master/scripts/att.sh -O /bin/att >/dev/null 2>/dev/null
+wget -c -P /bin https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/scripts/att.sh -O /bin/att >/dev/null 2>/dev/null
 clear
 chmod +x /bin/att
 clear
