@@ -111,7 +111,6 @@ fi
 
   read -p " DIGITE SUA OPÇÃO: [1-5] " opcao
   echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-
   echo -e $cinzaClaro" OPÇÃO ESCOLHIDA:"$fim $branco$opcao$fim
 
   case $opcao in
