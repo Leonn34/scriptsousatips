@@ -70,6 +70,7 @@ rm /bin/criarusuario >/dev/null 2>/dev/null
 rm /bin/criarusuariotemporario >/dev/null 2>/dev/null
 rm /bin/delhost >/dev/null 2>/dev/null
 rm /bin/desativarstunnel >/dev/null 2>/dev/null
+rm /bin/dropbear.sh >/dev/null 2>/dev/null
 rm /bin/expcleaner >/dev/null 2>/dev/null
 rm /bin/limiteconexao >/dev/null 2>/dev/null
 rm /bin/menu >/dev/null 2>/dev/null
@@ -165,6 +166,8 @@ wget https://raw.githubusercontent.com/Leonn34/scripts/master/ativarstunnel.sh -
 chmod +x /bin/ativarstunnel
 wget https://raw.githubusercontent.com/Leonn34/scripts/master/desativarstunnel.sh -O /bin/desativarstunnel
 chmod +x /bin/desativarstunnel
+wget https://raw.githubusercontent.com/Leonn34/scripts/master/dropbear.sh -O /bin/dropbear.sh
+chmod +x /bin/dropbear.sh
 
 rm /bin/setup.sh >/dev/null 2>/dev/null
 clear
