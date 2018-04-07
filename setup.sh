@@ -103,6 +103,7 @@ rm /bin/criarusuario >/dev/null 2>/dev/null
 rm /bin/criarusuariotemporario >/dev/null 2>/dev/null
 rm /bin/delhost >/dev/null 2>/dev/null
 rm /bin/desativarstunnel >/dev/null 2>/dev/null
+rm /bin/dropbear.sh >/dev/null 2>/dev/null
 rm /bin/expcleaner >/dev/null 2>/dev/null
 rm /bin/limiteconexao >/dev/null 2>/dev/null
 rm /bin/menu >/dev/null 2>/dev/null
@@ -207,7 +208,8 @@ then
 	chmod +x /bin/ativarstunnel
 	wget https://raw.githubusercontent.com/Leonn34/scripts/master/desativarstunnel.sh -O /bin/desativarstunnel
 	chmod +x /bin/desativarstunnel
-
+	wget https://raw.githubusercontent.com/Leonn34/scripts/master/dropbear.sh -O /bin/dropbear.sh
+	chmod +x /bin/dropbear.sh
 
 	if [ ! -f "/etc/init.d/squid3" ]
 	then
@@ -258,12 +260,12 @@ then
 	chmod +x /bin/sshmonitor
 	wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/scripts/menu.sh -O /bin/menu
 	chmod +x /bin/menu
-    wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/scripts/menu1.sh -O /bin/menu1
-    chmod +x /bin/menu1
-    wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/scripts/menu2.sh -O /bin/menu2
-    chmod +x /bin/menu2
-    wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/scripts/menu3.sh -O /bin/menu3
-    chmod +x /bin/menu3
+	wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/scripts/menu1.sh -O /bin/menu1
+	chmod +x /bin/menu1
+	wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/scripts/menu2.sh -O /bin/menu2
+	chmod +x /bin/menu2
+	wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/scripts/menu3.sh -O /bin/menu3
+	chmod +x /bin/menu3
 	wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/scripts/atualizar.sh -O /bin/atualizar
 	chmod +x /bin/atualizar
 	wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/scripts/clearcache.sh -O /bin/clearcache
@@ -297,6 +299,8 @@ then
 	chmod +x /bin/ativarstunnel
 	wget https://raw.githubusercontent.com/Leonn34/scripts/master/desativarstunnel.sh -O /bin/desativarstunnel
 	chmod +x /bin/desativarstunnel
+	wget https://raw.githubusercontent.com/Leonn34/scripts/master/dropbear.sh -O /bin/dropbear.sh
+	chmod +x /bin/dropbear.sh
 
 	if [ ! -f "/etc/init.d/squid" ]
 	then
