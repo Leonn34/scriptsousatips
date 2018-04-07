@@ -71,13 +71,15 @@ echo -e $amarelo" [2]"$fim $branco"DESATIVAR STUNNEL4 "$fim
 sleep 0.2
 echo -e $amarelo" [3]"$fim $branco"ATIVAR SOCKS5"$fim
 sleep 0.2
-echo -e $amarelo" [4]"$fim $branco"VOLTAR AO MENU PRINCIPAL"$fim
+echo -e $amarelo" [4]"$fim $branco"DROPBEAR"$fim
+sleep 0.2
+echo -e $amarelo" [5]"$fim $branco"VOLTAR AO MENU PRINCIPAL"$fim
 sleep 0.2
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 sleep 0.2
 echo ""
 
-read -p " DIGITE SUA OPÇÃO: [1-4] " opcao
+read -p " DIGITE SUA OPÇÃO: [1-5] " opcao
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 
 echo -e $cinzaClaro" OPÇÃO ESCOLHIDA:"$fim $branco$opcao$fim
@@ -129,6 +131,10 @@ menu2
 esac
 ;;
 4)
+echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
+dropbear.sh
+;;
+5)
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 menu
 ;;
