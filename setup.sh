@@ -110,6 +110,7 @@ rm /bin/menu >/dev/null 2>/dev/null
 rm /bin/menu1 >/dev/null 2>/dev/null
 rm /bin/menu2 >/dev/null 2>/dev/null
 rm /bin/menu3 >/dev/null 2>/dev/null
+rm /bin/menu-stunnel4 >/dev/null 2>/dev/null
 rm /bin/mudardata >/dev/null 2>/dev/null
 rm /bin/remover >/dev/null 2>/dev/null
 rm /bin/setup.sh >/dev/null 2>/dev/null
@@ -210,6 +211,8 @@ then
 	chmod +x /bin/desativarstunnel
 	wget https://raw.githubusercontent.com/Leonn34/scripts/master/dropbear.sh -O /bin/dropbear.sh
 	chmod +x /bin/dropbear.sh
+	wget https://raw.githubusercontent.com/Leonn34/scripts/master/menu-stunnel4.sh -O /bin/menu-stunnel4
+	chmod +x /bin/menu-stunnel4
 
 	if [ ! -f "/etc/init.d/squid3" ]
 	then
@@ -301,6 +304,8 @@ then
 	chmod +x /bin/desativarstunnel
 	wget https://raw.githubusercontent.com/Leonn34/scripts/master/dropbear.sh -O /bin/dropbear.sh
 	chmod +x /bin/dropbear.sh
+	wget https://raw.githubusercontent.com/Leonn34/scripts/master/menu-stunnel4.sh -O /bin/menu-stunnel4
+	chmod +x /bin/menu-stunnel4
 
 	if [ ! -f "/etc/init.d/squid" ]
 	then
