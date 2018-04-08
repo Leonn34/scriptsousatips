@@ -58,20 +58,45 @@ fim="\033[0;37m"
 #############################################
 
 clear
-
+#checar serviços
+#=====================================================
+ps -C dropbear > /dev/null
+if [ $? = 0 ]; then
+echo -e $verdeClaro"ATIVADO"$fim > /bin/status01
+else
+echo -e $vermelhoClaro"DESATIVADO"$fim > /bin/status01
+fi
+n1=$(cat /bin/status01)
+#=====================================================
+ps -C stunnel4 > /dev/null
+if [ $? = 0 ]; then
+echo -e $verdeClaro"ATIVADO"$fim > /bin/status02
+else
+echo -e $vermelhoClaro"DESATIVADO"$fim > /bin/status02
+fi
+n2=$(cat /bin/status02)
+#=====================================================
+ps -C socks5 > /dev/null
+if [ $? = 0 ]; then
+echo -e $verdeClaro"ATIVADO"$fim > /bin/status03
+else
+echo -e $vermelhoClaro"DESATIVADO"$fim > /bin/status03
+fi
+n3=$(cat /bin/status03)
+#=====================================================
   # MENU2 OPCAO 3 (SERVIÇOS)
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 echo ""
-echo -e $branco" GERENCIADOR DE SERVIÇOS"$fim
+echo -e $branco" GERENCIADOR DE SERVI�^�OS"$fim
 echo ""
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-echo -e $amarelo" [1]"$fim $branco"ATIVAR STUNNEL4"$fim
+echo -e $amarelo" [1]"$fim $branco"ATIVAR STUNNEL4"$fim $pretoCinza"STATUS: "$fim$n2
 sleep 0.2
 echo -e $amarelo" [2]"$fim $branco"DESATIVAR STUNNEL4 "$fim
 sleep 0.2
-echo -e $amarelo" [3]"$fim $branco"ATIVAR SOCKS5"$fim
+echo -e $amarelo" [3]"$fim $branco"ATIVAR SOCKS5"$fim $pretoCinza"STATUS: "$fim$n3
 sleep 0.2
-echo -e $amarelo" [4]"$fim $branco"DROPBEAR"$fim
+echo -e $amarelo" [4]"$fim $branco"DROPBEAR"$fim $pretoCinza"STATUS: "$fim$n1
 sleep 0.2
 echo -e $amarelo" [5]"$fim $branco"VOLTAR AO MENU PRINCIPAL"$fim
 sleep 0.2
