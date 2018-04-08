@@ -84,27 +84,25 @@ echo -e $vermelhoClaro"DESATIVADO"$fim > /bin/status03
 fi
 n3=$(cat /bin/status03)
 #=====================================================
-  # MENU2 OPCAO 3 (SERVIÇOS)
+ # MENU2 OPCAO 3 (SERVIÇOS)
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 echo ""
-echo -e $branco" GERENCIADOR DE SERVI�^�OS"$fim
+echo -e $branco" GERENCIADOR DE SERVIÇOS"$fim
 echo ""
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-echo -e $amarelo" [1]"$fim $branco"ATIVAR STUNNEL4"$fim $pretoCinza"STATUS: "$fim$n2
+echo -e $amarelo" [1]"$fim $branco"STUNNEL4"$fim $pretoCinza"STATUS: "$fim$n2
 sleep 0.2
-echo -e $amarelo" [2]"$fim $branco"DESATIVAR STUNNEL4 "$fim
+echo -e $amarelo" [2]"$fim $branco"SOCKS5"$fim $pretoCinza"STATUS: "$fim$n3
 sleep 0.2
-echo -e $amarelo" [3]"$fim $branco"ATIVAR SOCKS5"$fim $pretoCinza"STATUS: "$fim$n3
+echo -e $amarelo" [3]"$fim $branco"DROPBEAR"$fim $pretoCinza"STATUS: "$fim$n1
 sleep 0.2
-echo -e $amarelo" [4]"$fim $branco"DROPBEAR"$fim $pretoCinza"STATUS: "$fim$n1
-sleep 0.2
-echo -e $amarelo" [5]"$fim $branco"VOLTAR AO MENU PRINCIPAL"$fim
+echo -e $amarelo" [4]"$fim $branco"VOLTAR AO MENU PRINCIPAL"$fim
 sleep 0.2
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 sleep 0.2
 echo ""
 
-read -p " DIGITE SUA OPÇÃO: [1-5] " opcao
+read -p " DIGITE SUA OPÇÃO: [1-4] " opcao
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 echo -e $cinzaClaro" OPÇÃO ESCOLHIDA:"$fim $branco$opcao$fim
 
@@ -112,13 +110,9 @@ case $opcao in
 
 1)
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-ativarstunnel
+menu-stunnel4
 ;;
 2)
-echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-desativarstunnel
-;;
-3)
 clear
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 echo -e $amarelo"Para que o SOCKS funcione corretamente,"$fim
@@ -154,11 +148,11 @@ clear
 menu2
 esac
 ;;
-4)
+3)
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 dropbear.sh
 ;;
-5)
+4)
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 menu
 ;;
