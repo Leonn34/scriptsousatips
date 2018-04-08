@@ -61,25 +61,27 @@ clear
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 echo -e $branco" FERRAMENTAS"$fim
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-echo -e $amarelo" [1]"$fim $branco"MOSTRAR NUMERO DE CONEXÕES"$fim
+echo -e $amarelo" [1]"$fim $branco"VERIFICAR PORTAS UTILIZADAS"$fim
 sleep 0.2
-echo -e $amarelo" [2]"$fim $branco"LIMITAR CONEXÕES"$fim
+echo -e $amarelo" [2]"$fim $branco"MOSTRAR NUMERO DE CONEXÕES"$fim
 sleep 0.2
-echo -e $amarelo" [3]"$fim $branco"ADD HOSTS"$fim
+echo -e $amarelo" [3]"$fim $branco"LIMITAR CONEXÕES"$fim
 sleep 0.2
-echo -e $amarelo" [4]"$fim $branco"APAGAR HOSTS"$fim
+echo -e $amarelo" [4]"$fim $branco"ADD HOSTS"$fim
 sleep 0.2
-echo -e $amarelo" [5]"$fim $branco"LIMPAR CACHÊ"$fim
+echo -e $amarelo" [5]"$fim $branco"APAGAR HOSTS"$fim
 sleep 0.2
-echo -e $amarelo" [6]"$fim $branco"ATIVAR BADUDP"$fim
+echo -e $amarelo" [6]"$fim $branco"LIMPAR CACHÊ"$fim
 sleep 0.2
-echo -e $amarelo" [7]"$fim $branco"TESTE DE VELOCIDADE"$fim
+echo -e $amarelo" [7]"$fim $branco"ATIVAR BADUDP"$fim
 sleep 0.2
-echo -e $amarelo" [8]"$fim $branco"DESINSTALAR O SCRIPT"$fim
+echo -e $amarelo" [8]"$fim $branco"TESTE DE VELOCIDADE"$fim
 sleep 0.2
-echo -e $amarelo" [9]"$fim $branco"EDITAR O BANNER"$fim
+echo -e $amarelo" [9]"$fim $branco"DESINSTALAR O SCRIPT"$fim
 sleep 0.2
-echo -e $amarelo" [10]"$fim $branco"VOLTAR AO MENU PRINCIPAL"$fim
+echo -e $amarelo" [10]"$fim $branco"EDITAR O BANNER"$fim
+sleep 0.2
+echo -e $amarelo" [11]"$fim $branco"VOLTAR AO MENU PRINCIPAL"$fim
 sleep 0.2
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 sleep 0.2
@@ -93,25 +95,35 @@ case $opcao in
 
 1)
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-sshmonitor
+netstat -ntpl
+#voltar ao menu opcional
+echo ""
+echo "ENTER para voltar"
+read -p " "
+sleep 1s
+menu3
 ;;
 2)
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-limiteconexao
+sshmonitor
 ;;
 3)
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-addhost
+limiteconexao
 ;;
 4)
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-delhost
+addhost
 ;;
 5)
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-clearcache
+delhost
 ;;
 6)
+echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
+clearcache
+;;
+7)
 clear
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 echo -e $amarelo"COMANDOS PARA RODAR O BADUDP:"$fim
@@ -137,7 +149,7 @@ read -p ""
 sleep 1
 menu
 ;;
-7)
+8)
 clear
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 echo -e $amarelo"TESTANDO VELOCIDADE DO SERVIDOR..."$fim
@@ -145,18 +157,18 @@ sleep 2
 clear
 testeconexao
 ;;
-8)
+9)
 clear
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 sleep 2
 clear
 uinstall-script
 ;;
-9)
+10)
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 banner
 ;;
-10)
+11)
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 menu
 ;;
