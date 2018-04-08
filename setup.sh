@@ -93,7 +93,6 @@ rm /bin/addhost >/dev/null 2>/dev/null
 rm /bin/ajuda >/dev/null 2>/dev/null
 rm /bin/alterarlimite >/dev/null 2>/dev/null
 rm /bin/alterarsenha >/dev/null 2>/dev/null
-rm /bin/ativarstunnel >/dev/null 2>/dev/null
 rm /bin/att >/dev/null 2>/dev/null
 rm /bin/atualizar >/dev/null 2>/dev/null
 rm /bin/badudp >/dev/null 2>/dev/null
@@ -102,7 +101,6 @@ rm /bin/clearcache >/dev/null 2>/dev/null
 rm /bin/criarusuario >/dev/null 2>/dev/null
 rm /bin/criarusuariotemporario >/dev/null 2>/dev/null
 rm /bin/delhost >/dev/null 2>/dev/null
-rm /bin/desativarstunnel >/dev/null 2>/dev/null
 rm /bin/dropbear.sh >/dev/null 2>/dev/null
 rm /bin/expcleaner >/dev/null 2>/dev/null
 rm /bin/limiteconexao >/dev/null 2>/dev/null
@@ -205,10 +203,6 @@ then
 	chmod +x /bin/banner
 	wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/scripts/criarusuariotemporario.sh -O /bin/criarusuariotemporario
 	chmod +x /bin/criarusuariotemporario
-	wget https://raw.githubusercontent.com/Leonn34/scripts/master/ativarstunnel.sh -O /bin/ativarstunnel
-	chmod +x /bin/ativarstunnel
-	wget https://raw.githubusercontent.com/Leonn34/scripts/master/desativarstunnel.sh -O /bin/desativarstunnel
-	chmod +x /bin/desativarstunnel
 	wget https://raw.githubusercontent.com/Leonn34/scripts/master/dropbear.sh -O /bin/dropbear.sh
 	chmod +x /bin/dropbear.sh
 	wget https://raw.githubusercontent.com/Leonn34/scripts/master/menu-stunnel4.sh -O /bin/menu-stunnel4
@@ -298,10 +292,6 @@ then
 	chmod +x /bin/banner
 	wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/scripts/criarusuariotemporario.sh -O /bin/criarusuariotemporario
 	chmod +x /bin/criarusuariotemporario
-	wget https://raw.githubusercontent.com/Leonn34/scripts/master/ativarstunnel.sh -O /bin/ativarstunnel
-	chmod +x /bin/ativarstunnel
-	wget https://raw.githubusercontent.com/Leonn34/scripts/master/desativarstunnel.sh -O /bin/desativarstunnel
-	chmod +x /bin/desativarstunnel
 	wget https://raw.githubusercontent.com/Leonn34/scripts/master/dropbear.sh -O /bin/dropbear.sh
 	chmod +x /bin/dropbear.sh
 	wget https://raw.githubusercontent.com/Leonn34/scripts/master/menu-stunnel4.sh -O /bin/menu-stunnel4
