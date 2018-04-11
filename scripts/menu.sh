@@ -71,79 +71,76 @@ equal=$(diff -q $arq $arq1)
 ver=$(cat $arq)
 
 clear
-  #MENU PRINCIPAL
-  echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-  apt-get install figlet -y >/dev/null
-  tput setaf 3; tput bold; figlet -f slant Script SSH; tput sgr0
-  echo -e $purpleClaro$ver$fim | xargs echo -ne $branco"                                          VER.:"$fim; echo ""
-  echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-  sleep 0.2
-  echo -e $amarelo" Powered by | Sousa Tips ®"$fim
-  sso=$(cat -n /etc/issue |grep 1 |cut -d' ' -f6,7,8 |sed 's/1//' |sed 's/      //')
-  echo -e $vermelhoClaro" Seu sistema:"$fim$cyan $sso$fim
+#MENU PRINCIPAL
+echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
+apt-get install figlet -y >/dev/null
+tput setaf 3; tput bold; figlet -f slant Script SSH; tput sgr0
+echo -e $purpleClaro$ver$fim | xargs echo -ne $branco"                                          VER.:"$fim; echo ""
+echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
+sleep 0.2
+echo -e $amarelo" Powered by | Sousa Tips ®"$fim
+sso=$(cat -n /etc/issue |grep 1 |cut -d' ' -f6,7,8 |sed 's/1//' |sed 's/      //')
+echo -e $vermelhoClaro" Seu sistema:"$fim$cyan $sso$fim
 #######VERIFICAÇÃO DE ATUALIZAÇÃO####################
 if [ "$equal" = "" ]; then
-echo -ne ""
-#echo -e $branco" NÃO EXISTEM ATUALIZAÇÕES DISPONÍVEIS!"$fim
+  echo -ne ""
+  #echo -e $branco" NÃO EXISTEM ATUALIZAÇÕES DISPONÍVEIS!"$fim
 else
-echo -e $amarelo" EXISTEM ATUALIZAÇÕES DISPONÍVEIS!"$fim
-#mv -f $arq1 $arq
+  echo -e $amarelo" EXISTEM ATUALIZAÇÕES DISPONÍVEIS!"$fim
+  #mv -f $arq1 $arq
 fi
 #######FIM DE ATUALIZAÇÃO############################
-  echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-  echo -e $cyan"                                     USUÁRIOS ON:"$fim $verdeClaro$(ps x | grep hd | grep -v root | grep priv |wc -l)$fim
-  echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-  sleep 0.2
-  # MENU
-  echo -e $amarelo" [1]"$fim $branco"APLICAR ATUALIZAÇÕES"$fim
-  sleep 0.2
-  echo -e $amarelo" [2]"$fim $branco"GERENCIAR USUÁRIOS SSH"$fim
-  sleep 0.2
-  echo -e $amarelo" [3]"$fim $branco"SERVIÇOS"$fim
-  sleep 0.2
-  echo -e $amarelo" [4]"$fim $branco"FERRAMENTAS"$fim
-  sleep 0.2
-  echo -e $amarelo" [5]"$fim $branco"SAIR"$fim
-  sleep 0.2
-  echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-  sleep 0.2
-  echo ""
+echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
+echo -e $cyan"                                     USUÁRIOS ON:"$fim $verdeClaro$(ps x | grep hd | grep -v root | grep priv |wc -l)$fim
+echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
+sleep 0.2
+# MENU
+echo -e $amarelo" [1]"$fim $branco"APLICAR ATUALIZAÇÕES"$fim
+sleep 0.2
+echo -e $amarelo" [2]"$fim $branco"GERENCIAR USUÁRIOS SSH"$fim
+sleep 0.2
+echo -e $amarelo" [3]"$fim $branco"SERVIÇOS"$fim
+sleep 0.2
+echo -e $amarelo" [4]"$fim $branco"FERRAMENTAS"$fim
+sleep 0.2
+echo -e $amarelo" [5]"$fim $branco"SAIR"$fim
+sleep 0.2
+echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
+sleep 0.2
+read -p " DIGITE SUA OPÇÃO: [1-5] " opcao
+echo -e $cinzaClaro" OPÇÃO ESCOLHIDA:"$fim $branco$opcao$fim
 
-  read -p " DIGITE SUA OPÇÃO: [1-5] " opcao
-  echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-  echo -e $cinzaClaro" OPÇÃO ESCOLHIDA:"$fim $branco$opcao$fim
+case $opcao in
 
-  case $opcao in
-
-    1)
-      echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-      echo -e $amarelo"AGUARDE..."$fim
-      echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-      sleep 2
-      atualizar
-      ;;
-    2)
-      echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-      menu1
-      ;;
+  1)
+    echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
+    echo -e $amarelo"AGUARDE..."$fim
+    echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
+    sleep 2
+    atualizar
+    ;;
+  2)
+    echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
+    menu1
+    ;;
     3)
-      echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-      menu2
-      ;;
-    4)
-      echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-      menu3
-      ;;
-    5)
-      echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-      echo -e $branco"Saindo..."$fim
-      echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-      sleep 4
-      clear
-      exit
-      ;;
-    *)
-      echo -e $vermelhoClaro"OPÇÃO INVÁLIDA!!!"$fim
-      sleep 4
-      menu
-  esac
+    echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
+    menu2
+    ;;
+  4)
+    echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
+    menu3
+    ;;
+  5)
+    echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
+    echo -e $branco"Saindo..."$fim
+    echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
+    sleep 4
+    clear
+    exit
+    ;;
+  *)
+    echo -e $vermelhoClaro"OPÇÃO INVÁLIDA!!!"$fim
+    sleep 4
+    menu
+esac
