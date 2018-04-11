@@ -87,7 +87,7 @@ echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 sleep 0.2
 echo ""
 
-read -p " DIGITE SUA OPÇÃO: [1-10] " opcao
+read -p " DIGITE SUA OPÇÃO: [1-11] " opcao
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 echo -e $cinzaClaro" OPÇÃO ESCOLHIDA:"$fim $branco$opcao$fim
 
