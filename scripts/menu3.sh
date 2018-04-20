@@ -57,6 +57,25 @@ branco="\033[1;37m"
 fim="\033[0;37m"
 #############################################
 # MENU3 OPCAO 4 (FERRAMENTAS)
+# CHECAR SERVICO ATIVO
+#============================================
+ps -C sshlimiter > /dev/null
+if [ $? = 0 ] ; then
+        echo -e $verdeClaro"ATIVADO"$fim > /tmp/statussshlimiter
+else
+        echo -e $vermelhoClaro"DESATIVADO"$fim > /tmp/statussshlimiter
+fi
+statussshlimiter=$(cat /tmp/statussshlimiter)
+#=============================================
+#============================================
+ps -C badudp > /dev/null
+if [ $? = 0 ] ; then
+        echo -e $verdeClaro"ATIVADO"$fim > /tmp/statusbadudp
+else
+        echo -e $vermelhoClaro"DESATIVADO"$fim > /tmp/statusbadudp
+fi
+statusbadudp=$(cat /tmp/statusbadudp)
+#=============================================
 clear
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 echo -e $branco" FERRAMENTAS"$fim
@@ -65,7 +84,7 @@ echo -e $amarelo" [1]"$fim $branco"VERIFICAR PORTAS UTILIZADAS"$fim
 sleep 0.2
 echo -e $amarelo" [2]"$fim $branco"MOSTRAR NUMERO DE CONEXÕES"$fim
 sleep 0.2
-echo -e $amarelo" [3]"$fim $branco"LIMITAR CONEXÕES"$fim
+echo -e $amarelo" [3]"$fim $branco"LIMITAR CONEXÕES"$fim $pretoCinza"STATUS: "$fim$statussshlimiter
 sleep 0.2
 echo -e $amarelo" [4]"$fim $branco"ADD HOSTS"$fim
 sleep 0.2
@@ -73,7 +92,7 @@ echo -e $amarelo" [5]"$fim $branco"APAGAR HOSTS"$fim
 sleep 0.2
 echo -e $amarelo" [6]"$fim $branco"LIMPAR CACHÊ"$fim
 sleep 0.2
-echo -e $amarelo" [7]"$fim $branco"ATIVAR BADUDP"$fim
+echo -e $amarelo" [7]"$fim $branco"ATIVAR BADUDP"$fim $pretoCinza"STATUS: "$fim$statusbadudp
 sleep 0.2
 echo -e $amarelo" [8]"$fim $branco"TESTE DE VELOCIDADE"$fim
 sleep 0.2
