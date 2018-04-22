@@ -137,10 +137,9 @@ tput setaf 7 ; tput bold ; echo "Criar Usuário SSH" ; tput sgr0
 																pass=$(perl -e 'print crypt($ARGV[0], "password")' $password)
 																useradd -e $final -M -s /bin/false -p $pass $username
 																[ $? -eq 0 ] && tput setaf 2 ; tput bold ; echo ""; echo "Usuário $username criado" ; echo "Data de expiração: $gui" ; echo "Nº de conexões simultâneas permitidas: $sshlimiter" ; echo "" || echo "Não foi possível criar o usuário!" ; tput sgr0
+																echo "$username $sshlimiter" >> /root/usuarios.db
 																sleep 5
 																menu
-																echo "$username $sshlimiter" >> /root/usuarios.db
-																
 															fi
 														fi
 													fi
