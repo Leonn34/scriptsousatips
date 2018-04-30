@@ -1,4 +1,24 @@
 #!/bin/bash
+#############################################
+corPadrao="\033[0m"
+preto="\033[0;30m"
+vermelho="\033[0;31m"
+verde="\033[0;32m"
+marrom="\033[0;33m"
+azul="\033[0;34m"
+purple="\033[0;35m"
+cyan="\033[0;36m"
+cinzaClaro="\033[0;37m"
+pretoCinza="\033[1;30m"
+vermelhoClaro="\033[1;31m"
+verdeClaro="\033[1;32m"
+amarelo="\033[1;33m"
+azulClaro="\033[1;34m"
+purpleClaro="\033[1;35m"
+cyanClaro="\033[1;36m"
+branco="\033[1;37m"
+fim="\033[0;37m"
+#############################################
 # cria um bkp do sshd_config
 clear
 sshd_config_bak=$(cat /etc/ssh/sshd_config | grep -v "Banner")
@@ -12,16 +32,16 @@ FILE="/etc/bannerssh"
 
 txt_font () {
 echo ""
-echo -ne " DIGITE O TEXTO PARA O BANNER:"; read ban_ner2
+echo -ne $branco"DIGITE O TEXTO PARA O BANNER:"$fim; read ban_ner2
 echo ""
-echo -e " Escolha a cor para:" $ban_ner2
-echo -e "-------------"
-echo -e " 1 VERDE"
-echo -e " 2 VERMELHO"
-echo -e " 3 AZUL"
-echo -e " 4 AMARELO"
-echo -e " 5 ROXO"
-echo -e "-------------"
+echo -e $branco"Escolha a cor para:"$fim $ban_ner2
+echo -e $pretoCinza"-------------"$fim
+echo -e $branco"[1]"$fim $verdeClaro"VERDE"$fim
+echo -e $branco"[2]"$fim $vermelhoClaro"VERMELHO"$fim
+echo -e $branco"[3]"$fim $azulClaro"AZUL"$fim
+echo -e $branco"[4]"$fim $amarelo"AMARELO"$fim
+echo -e $branco"[5]"$fim $purpleClaro"ROXO"$fim
+echo -e $pretoCinza"-------------"$fim
 echo -ne "OPÇÃO [1-5]:"; read ban_ner2_cor
 
 if [ "$ban_ner2_cor" = "1" ]; then
@@ -54,31 +74,31 @@ echo "</h6></font>" >> $FILE
 
 clear
 
-echo -e " MENSAGEN ATUAL:"
+echo -e $branco"MENSAGEN ATUAL:"$fim
 echo ""
 NUMBER=$(cat $FILE | wc -l)
 if [ -z "$NUMBER" ]; then
-  echo -e " Você não possui nenhuma mensagem no momento!"
+  echo -e $amarelo"Você não possui nenhuma mensagem no momento!"$fim
 else
   echo -ne ""; cat $FILE
 fi
 echo ""
-echo -ne " DIGITE A MENSAGEM PRINCIPAL:"; read BANNER
+echo -ne $branco"DIGITE A MENSAGEM PRINCIPAL:"$fim; read BANNER
 echo ""
 if [ -z "$BANNER" ]; then
-  echo "Voce não digitou nada!"
+  echo -e $vermelhoClaro"Voce não digitou nada!"$fim
   sleep 5
   banner
 else
-echo -e " Escolha a cor para: "$BANNER
-echo -e "-------------"
-echo -e " 1  VERDE"
-echo -e " 2  VERMELHO"
-echo -e " 3  AZUL"
-echo -e " 4  AMARELO"
-echo -e " 5  ROXO"
-echo -e "-------------"
-echo -ne " OPÇÃO [1-5]:"; read ban_ner_cor
+echo -e $branco"Escolha a cor para:"$fim $BANNER
+echo -e $pretoCinza"-------------"$fim
+echo -e $branco"[1]"$fim $verdeClaro"VERDE"$fim
+echo -e $branco"[2]"$fim $vermelhoClaro"VERMELHO"$fim
+echo -e $branco"[3]"$fim $azulClaro"AZUL"$fim
+echo -e $branco"[4]"$fim $amarelo"AMARELO"$fim
+echo -e $branco"[5]"$fim $purpleClaro"ROXO"$fim
+echo -e $pretoCinza"-------------"$fim
+echo -ne $amarelo" OPÇÃO [1-5]:"$fim; read ban_ner_cor
 echo '<h1><font>=============================</font></h1>' > $FILE
 
 if [ "$ban_ner_cor" = "1" ]; then
@@ -111,8 +131,7 @@ echo '<h1><font>=============================</font></h1>' >> $FILE
 while true; do
 echo ""
 echo -ne ""
-echo -e " Deseja adicionar mais textos?"
-read -p " [ s | n ]: " sin_nao
+read -p "Deseja adicionar mais textos? [ s | n ]: " sin_nao
 if [[ "$sin_nao" = "s" || "$sin_nao" = "S" ]]; then
 txt_font
 fi
@@ -130,18 +149,18 @@ fi
 echo -e "${cor[1]} =================================== ${cor[0]}"
   service ssh reload 1> /dev/null 2> /dev/null
   clear
-  echo -e " Mensagem atual:"; echo ""
+  echo -e $branco" Mensagem atual:"$fim; echo ""
   NUMBER=$(cat $FILE | wc -l)
   if [ -z "$NUMBER" ]; then
-    echo -e " Você não possui nenhuma mensagem no momento!"
+    echo -e $vermelhoClaro" Você não possui nenhuma mensagem no momento!"$fim
   else
     echo -ne ""; cat $FILE
   fi
   echo ""
-  echo -e " Mensagem alterada com sucesso!"
+  echo -e $verdeClaro" Mensagem alterada com sucesso!"$fim
 fi
 echo ""
-echo -ne " APERTE ENTER PARA VOLTAR AO MENU... "
+echo -ne $branco" APERTE ENTER PARA VOLTAR AO MENU..."$fim
 read ENTER
 menu
 exit
