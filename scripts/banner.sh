@@ -140,7 +140,7 @@ break
 fi
 done
 echo '<h1><font>=============================</font></h1>' >> $FILE
-echo '</h8><font color="purple">SOUSA TIPS ®</font></h8>' >> $FILE
+echo '</h8><font color="purple">POWERED BY SOUSA TIPS®</font></h8>' >> $FILE
 echo '<h1><font>=============================</font></h1>' >> $FILE
 if [ -e "$local2" ]; then
 rm $local2  > /dev/null 2>&1
