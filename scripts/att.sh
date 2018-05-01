@@ -63,7 +63,7 @@ rm /bin/alterarlimite >/dev/null 2>/dev/null
 rm /bin/alterarsenha >/dev/null 2>/dev/null
 rm /bin/att >/dev/null 2>/dev/null
 rm /bin/atualizar >/dev/null 2>/dev/null
-rm /bin/badudp >/dev/null 2>/dev/null
+#rm /bin/badudp >/dev/null 2>/dev/null
 rm /bin/badvpn-setup >/dev/null 2>/dev/null
 rm /bin/badvpn-remove >/dev/null 2>/dev/null
 rm /bin/badvpnmenu >/dev/null 2>/dev/null
