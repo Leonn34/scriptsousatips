@@ -1,0 +1,80 @@
+#!/bin/bash
+
+BADVPN="/home/DATABASE/BadVPN"
+UDP="/bin/badudp"
+
+# menu badvpn
+if [ -f "$UDP" ]; then
+	clear
+	echo "BADVPN STATUS: INSTALADO!"
+	NUMBER=$(ps -x | grep -c "badvpn-udpgw")
+	if [ $NUMBER = "2" ]; then
+		echo " STATUS: ATIVO"
+		echo " [1] PARAR"
+		echo " [2] SAIR"
+		read -p "OPÇÃO [1-2]:" opcao
+		case $opcao in
+			1)
+				clear
+				pkill -f badudp
+				sleep 3
+				badvpnmenu
+				exit
+				;;
+			2)
+				clear
+				menu
+				;;
+			*)
+				exit
+				;;
+		esac
+	else
+		clear				
+		echo "BADVPN STATUS: DESATIVADO!"
+		echo " [1] ATIVAR"
+		echo " [2] SAIR"
+		read -p "OPÇÃO [1-2]:" opcao2
+		case $opcao2 in
+				
+			1)
+				clear
+				screen -dmS screen badudp
+				sleep 3
+				badvpnmenu
+				exit
+				;;
+			2)
+				clear
+				menu
+				exit
+				;;
+			*)
+				clear
+				badvpnmenu
+				exit
+				;;
+		esac		
+	fi
+	else
+		clear
+		echo "BADVPN STATUS: NÃO INSTALADO!"
+		echo " [1] INSTALAR"
+		echo " [2] SAIR"
+		read -p "OPÇÃO [1-2]:" opcao3
+		case $opcao3 in
+			1)
+				badvpn-setup #setup badudp
+				;;
+			2)	
+				clear
+				menu
+				exit
+				;;
+			*)
+				clear
+				badvpnmenu #menu
+				exit
+				;;
+		esac
+fi
