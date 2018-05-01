@@ -140,8 +140,6 @@ wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/scripts/at
 chmod +x /bin/atualizar
 wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/scripts/clearcache.sh -O /bin/clearcache
 chmod +x /bin/clearcache
-wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/scripts/badudp.sh -O /bin/badudp
-chmod +x /bin/badudp
 wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/scripts/userbkp.sh -O /bin/userbkp
 chmod +x /bin/userbkp
 wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/scripts/socks.py -O /bin/socks.py
