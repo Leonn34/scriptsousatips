@@ -145,28 +145,7 @@ clearcache
 7)
 clear
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-echo -e $amarelo"COMANDOS PARA RODAR O BADUDP:"$fim
-sleep 2
-echo ""
-echo -e $branco"1º - ABRA UMA SESSÃO"$fim $verdeClaro"SCREEN"$fim
-sleep 2
-echo -e $branco"DIGITE:"$fim $vermelhoClaro"screen"$fim$branco", EM SEGUIDA APERTE"$fim $verdeClaro"ENTER"$fim
-sleep 2
-echo -e $branco"2º - DIGITE"$fim $verdeClaro"badudp"$fim$branco", E APERTE"$fim $verdeClaro"ENTER"$fim
-sleep 2
-echo -e $branco"3º - PARA SAIR E DEIXAR A SESSÃO RODANDO,"$fim
-sleep 2
-echo -e $branco"ENTRE COM:"$fim $verdeClaro"Ctrl+A+D"$fim
-sleep 2
-echo ""
-echo -e $amarelo"OBS.: A CADA VEZ QUE FOR REINICIADO A VPS,"$fim
-echo -e $amarelo"REPITA OS MESMOS PASSOS!"$fim
-echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-echo ""
-echo "ENTER para voltar"
-read -p ""
-sleep 1
-menu
+badvpnmenu
 ;;
 8)
 clear
