@@ -68,6 +68,7 @@ rm /bin/ver >/dev/null 2>/dev/null
 rm /bin/ver1 >/dev/null 2>/dev/null
 rm /bin/badvpn-setup >/dev/null 2>/dev/null
 rm /bin/badvpnmenu >/dev/null 2>/dev/null
+rm /bin/badvpn-remove >/dev/null 2>/dev/null
 
 ssh="/etc/ssh/sshbak"
 if [ ! -f "$ssh" ]
