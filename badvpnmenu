@@ -11,8 +11,9 @@ if [ -f "$UDP" ]; then
 	if [ $NUMBER = "2" ]; then
 		echo " STATUS: ATIVO"
 		echo " [1] PARAR"
-		echo " [2] SAIR"
-		read -p "OPÇÃO [1-2]:" opcao
+		echo " [2] DESINSTALAR"
+		echo " [3] SAIR"
+		read -p "OPÇÃO [1-3]:" opcao
 		case $opcao in
 			1)
 				clear
@@ -23,9 +24,15 @@ if [ -f "$UDP" ]; then
 				;;
 			2)
 				clear
+				badvpn-remove
+				;;
+			3)
+				clear
 				menu
 				;;
 			*)
+				clear
+				badvpnmenu
 				exit
 				;;
 		esac
@@ -33,8 +40,9 @@ if [ -f "$UDP" ]; then
 		clear				
 		echo "BADVPN STATUS: DESATIVADO!"
 		echo " [1] ATIVAR"
-		echo " [2] SAIR"
-		read -p "OPÇÃO [1-2]:" opcao2
+		echo " [2] DESINSTALAR"
+		echo " [3] SAIR"
+		read -p "OPÇÃO [1-3]:" opcao2
 		case $opcao2 in
 				
 			1)
@@ -46,8 +54,11 @@ if [ -f "$UDP" ]; then
 				;;
 			2)
 				clear
+				badvpn-remove
+				;;
+			3)
+				clear
 				menu
-				exit
 				;;
 			*)
 				clear
