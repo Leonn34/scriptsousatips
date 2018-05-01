@@ -66,6 +66,8 @@ rm /bin/uinstall-script >/dev/null 2>/dev/null
 rm /bin/userbkp >/dev/null 2>/dev/null
 rm /bin/ver >/dev/null 2>/dev/null
 rm /bin/ver1 >/dev/null 2>/dev/null
+rm /bin/badvpn-setup >/dev/null 2>/dev/null
+rm /bin/badvpnmenu >/dev/null 2>/dev/null
 
 ssh="/etc/ssh/sshbak"
 if [ ! -f "$ssh" ]
