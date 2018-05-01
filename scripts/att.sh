@@ -87,6 +87,8 @@ rm /bin/sshmonitor >/dev/null 2>/dev/null
 rm /bin/testeconexao >/dev/null 2>/dev/null
 rm /bin/uinstall-script >/dev/null 2>/dev/null
 rm /bin/userbkp >/dev/null 2>/dev/null
+rm /bin/badvpn-setup >/dev/null 2>/dev/null
+rm /bin/badvpnmenu >/dev/null 2>/dev/null
 
 rm /root/ExpCleaner.sh /root/CriarUsuario.sh /root/sshlimiter.sh >/dev/null 2>/dev/null
 
@@ -165,6 +167,10 @@ wget https://raw.githubusercontent.com/Leonn34/scripts/master/dropbear.sh -O /bi
 chmod +x /bin/dropbear.sh
 wget https://raw.githubusercontent.com/Leonn34/scripts/master/menu-stunnel4.sh -O /bin/menu-stunnel4
 chmod +x /bin/menu-stunnel4
+wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/badvpn-setup -O /bin/badvpn-setup
+chmod +x /bin/badvpn-setup
+wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/badvpnmenu -O /bin/badvpnmenu
+chmod +x /bin/badvpnmenu
 
 rm /bin/setup.sh >/dev/null 2>/dev/null
 clear
