@@ -34,7 +34,7 @@ txt_font () {
 echo ""
 echo -ne $branco"DIGITE O TEXTO PARA O BANNER:"$fim; read ban_ner2
 echo ""
-echo -e $branco"Escolha a cor para:"$fim $ban_ner2
+echo -e $branco"ESCOLHA A COR PARA:"$fim $ban_ner2
 echo -e $pretoCinza"-------------"$fim
 echo -e $branco"[1]"$fim $verdeClaro"VERDE"$fim
 echo -e $branco"[2]"$fim $vermelhoClaro"VERMELHO"$fim
@@ -78,7 +78,7 @@ echo -e $branco"MENSAGEN ATUAL:"$fim
 echo ""
 NUMBER=$(cat $FILE | wc -l)
 if [ -z "$NUMBER" ]; then
-  echo -e $amarelo"Você não possui nenhuma mensagem no momento!"$fim
+  echo -e $amarelo"VOCÊ NÃO POSSUI NENHUMA MENSAGEM NO MOMENTO!"$fim
 else
   echo -ne ""; cat $FILE
 fi
@@ -86,11 +86,11 @@ echo ""
 echo -ne $branco"DIGITE A MENSAGEM PRINCIPAL:"$fim; read BANNER
 echo ""
 if [ -z "$BANNER" ]; then
-  echo -e $vermelhoClaro"Voce não digitou nada!"$fim
+  echo -e $vermelhoClaro"VOCE NÃO DIGITOU NADA!"$fim
   sleep 5
   banner
 else
-echo -e $branco"Escolha a cor para:"$fim $BANNER
+echo -e $branco"ESCOLHA A COR PARA:"$fim $BANNER
 echo -e $pretoCinza"-------------"$fim
 echo -e $branco"[1]"$fim $verdeClaro"VERDE"$fim
 echo -e $branco"[2]"$fim $vermelhoClaro"VERMELHO"$fim
@@ -131,7 +131,7 @@ echo '<h1><font>=============================</font></h1>' >> $FILE
 while true; do
 echo ""
 echo -ne ""
-read -p "Deseja adicionar mais textos? [ s | n ]: " sin_nao
+read -p "DESEJA ADICIONAR MAIS TEXTOS? [ s | n ]: " sin_nao
 if [[ "$sin_nao" = "s" || "$sin_nao" = "S" ]]; then
 txt_font
 fi
@@ -149,15 +149,15 @@ fi
 echo -e "${cor[1]} =================================== ${cor[0]}"
   service ssh reload 1> /dev/null 2> /dev/null
   clear
-  echo -e $branco" Mensagem atual:"$fim; echo ""
+  echo -e $branco" MENSAGEM ATUAL:"$fim; echo ""
   NUMBER=$(cat $FILE | wc -l)
   if [ -z "$NUMBER" ]; then
-    echo -e $vermelhoClaro" Você não possui nenhuma mensagem no momento!"$fim
+    echo -e $vermelhoClaro" VOCÊ NÃO POSSUI NENHUMA MENSAGEM NO MOMENTO!"$fim
   else
     echo -ne ""; cat $FILE
   fi
   echo ""
-  echo -e $verdeClaro" Mensagem alterada com sucesso!"$fim
+  echo -e $verdeClaro" MENSAGEM ALTERADA COM SUCESSO!"$fim
 fi
 echo ""
 echo -ne $branco" APERTE ENTER PARA VOLTAR AO MENU..."$fim
