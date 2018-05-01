@@ -27,15 +27,16 @@ UDP="/bin/badudp"
 # menu badvpn
 if [ -f "$UDP" ]; then
 	clear
-	echo -e $amarelo"BADVPN STATUS:"$fim $verdeClaro"INSTALADO!"$fim
+	echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
+    echo -e $amarelo"BADVPN STATUS:"$fim $verdeClaro"INSTALADO!"$fim
 	NUMBER=$(ps -x | grep -c "badvpn-udpgw")
 	if [ $NUMBER = "2" ]; then
 		echo -e $amarelo" STATUS:"$fim $verdeClaro" ATIVO"$fim
-        echo -e $verdeClaro"=-=-=-=-=-=-=-="$fim
+        echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
         echo $branco" [1] PARAR"$fim
 		echo $branco" [2] DESINSTALAR"$fim
 		echo $branco" [3] SAIR"$fim
-        echo -e $verdeClaro"=-=-=-=-=-=-=-="$fim
+        echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 		read -p "OPÇÃO [1-3]:" opcao
 		case $opcao in
 			1)
@@ -61,13 +62,13 @@ if [ -f "$UDP" ]; then
 		esac
 	else
 		clear
-        echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-="$fim
+        echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 		echo -e $branco" STATUS:"$fim$vermelhoClaro" DESATIVADO!"$fim
-		echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-="$fim
+		echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
         echo -e $branco" [1] ATIVAR"$fim
 		echo -e $branco" [2] DESINSTALAR"$fim
 		echo -e $branco" [3] SAIR"$fim
-        echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-="$fim
+        echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 		read -p "OPÇÃO [1-3]:" opcao2
 		case $opcao2 in
 
@@ -95,12 +96,12 @@ if [ -f "$UDP" ]; then
 	fi
 	else
 		clear
-        echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-="$fim
-		echo -e $branco"BADVPN STATUS:"$fim$vermelhoClaro" NÃO INSTALADO!"$fim
-		echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-="$fim
+        echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
+		echo -e $branco" BADVPN STATUS:"$fim$vermelhoClaro" NÃO INSTALADO!"$fim
+		echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
         echo -e $branco" [1] INSTALAR"$fim
 		echo -e $branco" [2] SAIR"$fim
-        echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-="$fim
+        echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 		read -p "OPÇÃO [1-2]:" opcao3
 		case $opcao3 in
 			1)

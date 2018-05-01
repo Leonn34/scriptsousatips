@@ -31,7 +31,6 @@ bash /bin/setup.sh
 
 option remove () {
 echo -e ""
-echo -e ""
 
 rm /bin/addhost >/dev/null 2>/dev/null
 rm /bin/ajuda >/dev/null 2>/dev/null
