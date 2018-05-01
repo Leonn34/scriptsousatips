@@ -1,0 +1,27 @@
+#!/bin/bash
+
+BADVPN="/home/BadVPN"
+UDP="/bin/udp"
+
+if [ ! -f "$UDP" ]; then
+  echo ""
+  echo -e "Você não possui o BadVPN instalado!"
+  sleep 3s
+  badvpnmenu
+  exit 
+else
+  clear
+  echo ""
+  echo -e " DESINSTALANDO BADVPN..."
+  rm -rf $BADVPN
+  rm -rf $UDP
+  sleep 3s
+  clear
+  echo ""
+  echo -e " BadVPN desinstalado com sucesso!"
+fi
+echo ""
+echo -e " APERTE A TECLA ENTER PARA VOLTAR AO MENU..."
+read ENTER
+badvpnmenu
+exit
