@@ -39,6 +39,7 @@ rm /bin/alterarsenha >/dev/null 2>/dev/null
 rm /bin/att >/dev/null 2>/dev/null
 rm /bin/atualizar >/dev/null 2>/dev/null
 rm /bin/badudp >/dev/null 2>/dev/null
+rm /bin/badvpnmenu >/dev/null 2>/dev/null
 rm /bin/banner >/dev/null 2>/dev/null
 rm /bin/clearcache >/dev/null 2>/dev/null
 rm /bin/criarusuario >/dev/null 2>/dev/null
@@ -48,10 +49,10 @@ rm /bin/dropbear.sh >/dev/null 2>/dev/null
 rm /bin/expcleaner >/dev/null 2>/dev/null
 rm /bin/limiteconexao >/dev/null 2>/dev/null
 rm /bin/menu >/dev/null 2>/dev/null
+rm /bin/menu-stunnel4 >/dev/null 2>/dev/null
 rm /bin/menu1 >/dev/null 2>/dev/null
 rm /bin/menu2 >/dev/null 2>/dev/null
 rm /bin/menu3 >/dev/null 2>/dev/null
-rm /bin/menu-stunnel4 >/dev/null 2>/dev/null
 rm /bin/mudardata >/dev/null 2>/dev/null
 rm /bin/remover >/dev/null 2>/dev/null
 rm /bin/setup.sh >/dev/null 2>/dev/null
@@ -65,9 +66,6 @@ rm /bin/uinstall-script >/dev/null 2>/dev/null
 rm /bin/userbkp >/dev/null 2>/dev/null
 rm /bin/ver >/dev/null 2>/dev/null
 rm /bin/ver1 >/dev/null 2>/dev/null
-rm /bin/badvpn-setup >/dev/null 2>/dev/null
-rm /bin/badvpnmenu >/dev/null 2>/dev/null
-rm /bin/badvpn-remove >/dev/null 2>/dev/null
 
 ssh="/etc/ssh/sshbak"
 if [ ! -f "$ssh" ]

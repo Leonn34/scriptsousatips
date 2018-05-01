@@ -63,6 +63,7 @@ rm /bin/alterarsenha >/dev/null 2>/dev/null
 rm /bin/att >/dev/null 2>/dev/null
 rm /bin/atualizar >/dev/null 2>/dev/null
 rm /bin/badudp >/dev/null 2>/dev/null
+rm /bin/badvpnmenu >/dev/null 2>/dev/null
 rm /bin/banner >/dev/null 2>/dev/null
 rm /bin/clearcache >/dev/null 2>/dev/null
 rm /bin/criarusuario >/dev/null 2>/dev/null
@@ -72,10 +73,10 @@ rm /bin/dropbear.sh >/dev/null 2>/dev/null
 rm /bin/expcleaner >/dev/null 2>/dev/null
 rm /bin/limiteconexao >/dev/null 2>/dev/null
 rm /bin/menu >/dev/null 2>/dev/null
+rm /bin/menu-stunnel4 >/dev/null 2>/dev/null
 rm /bin/menu1 >/dev/null 2>/dev/null
 rm /bin/menu2 >/dev/null 2>/dev/null
 rm /bin/menu3 >/dev/null 2>/dev/null
-rm /bin/menu-stunnel4 >/dev/null 2>/dev/null
 rm /bin/mudardata >/dev/null 2>/dev/null
 rm /bin/remover >/dev/null 2>/dev/null
 rm /bin/setup.sh >/dev/null 2>/dev/null
@@ -87,9 +88,7 @@ rm /bin/sshmonitor >/dev/null 2>/dev/null
 rm /bin/testeconexao >/dev/null 2>/dev/null
 rm /bin/uinstall-script >/dev/null 2>/dev/null
 rm /bin/userbkp >/dev/null 2>/dev/null
-rm /bin/badvpn-setup >/dev/null 2>/dev/null
-rm /bin/badvpnmenu >/dev/null 2>/dev/null
-rm /bin/badvpn-remove >/dev/null 2>/dev/null
+
 
 rm /root/ExpCleaner.sh /root/CriarUsuario.sh /root/sshlimiter.sh >/dev/null 2>/dev/null
 
@@ -166,12 +165,8 @@ wget https://raw.githubusercontent.com/Leonn34/scripts/master/dropbear.sh -O /bi
 chmod +x /bin/dropbear.sh
 wget https://raw.githubusercontent.com/Leonn34/scripts/master/menu-stunnel4.sh -O /bin/menu-stunnel4
 chmod +x /bin/menu-stunnel4
-wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/badvpn-setup -O /bin/badvpn-setup
-chmod +x /bin/badvpn-setup
 wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/badvpnmenu -O /bin/badvpnmenu
 chmod +x /bin/badvpnmenu
-wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/badvpn-remove -O /bin/badvpn-remove
-chmod +x /bin/badvpn-remove
 
 rm /bin/setup.sh >/dev/null 2>/dev/null
 clear
@@ -185,14 +180,15 @@ sleep 2
 clear
 
 #REINICIANDO SQUID E SSH
-
+# não reinicei o squid após download e att do menu!
+:<<'NÃO_USAR_SQUID'
 if [ ! -f "/etc/init.d/squid3" ]
 	then
 		service squid3 reload > /dev/null
 	else
 		/etc/init.d/squid3 reload > /dev/null
 fi
-
+NÃO_USAR_SQUID
 
 if [ ! -f "/etc/init.d/ssh" ]
 	then
