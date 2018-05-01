@@ -21,7 +21,7 @@ branco="\033[1;37m"
 fim="\033[0;37m"
 #############################################
 
-reinstalar () {
+option reinstalar () {
 apt-get update -y
 apt-get upgrade -y
 wget -c -P /bin https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/setup.sh
@@ -29,7 +29,7 @@ chmod +x /bin/setup.sh
 bash /bin/setup.sh
 }
 
-remove () {
+option remove () {
 echo -e ""
 echo -e ""
 
