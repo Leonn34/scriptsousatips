@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BADVPN="/home/DATABASE/BadVPN"
+BADVPN="/home/BadVPN"
 UDP="/bin/badudp"
 
 # menu badvpn
