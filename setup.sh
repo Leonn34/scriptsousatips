@@ -124,6 +124,7 @@ rm /bin/ver >/dev/null 2>/dev/null
 rm /bin/ver1 >/dev/null 2>/dev/null
 rm /bin/badvpn-setup >/dev/null 2>/dev/null
 rm /bin/badvpnmenu >/dev/null 2>/dev/null
+rm /bin/badvpn-remove >/dev/null 2>/dev/null
 
 rm /root/ExpCleaner.sh /root/CriarUsuario.sh /root/sshlimiter.sh >/dev/null 2>/dev/null
 
@@ -171,12 +172,12 @@ then
 	chmod +x /bin/sshmonitor
 	wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/scripts/menu.sh -O /bin/menu
 	chmod +x /bin/menu
-    wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/scripts/menu1.sh -O /bin/menu1
-    chmod +x /bin/menu1
-    wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/scripts/menu2.sh -O /bin/menu2
-    chmod +x /bin/menu2
-    wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/scripts/menu3.sh -O /bin/menu3
-    chmod +x /bin/menu3
+	wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/scripts/menu1.sh -O /bin/menu1
+	chmod +x /bin/menu1
+	wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/scripts/menu2.sh -O /bin/menu2
+	chmod +x /bin/menu2
+	wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/scripts/menu3.sh -O /bin/menu3
+	chmod +x /bin/menu3
 	wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/scripts/atualizar.sh -O /bin/atualizar
 	chmod +x /bin/atualizar
 	wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/scripts/clearcache.sh -O /bin/clearcache
@@ -211,7 +212,9 @@ then
 	chmod +x /bin/badvpn-setup
 	wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/badvpnmenu -O /bin/badvpnmenu
 	chmod +x /bin/badvpnmenu
-
+	wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/badvpn-remove -O /bin/badvpn-remove
+	chmod +x /bin/badvpn-remove
+	
 	if [ ! -f "/etc/init.d/squid3" ]
 	then
 		service squid3 reload > /dev/null
@@ -302,6 +305,8 @@ then
 	chmod +x /bin/badvpn-setup
 	wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/badvpnmenu -O /bin/badvpnmenu
 	chmod +x /bin/badvpnmenu
+	wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/badvpn-remove -O /bin/badvpn-remove
+	chmod +x /bin/badvpn-remove
 
 	if [ ! -f "/etc/init.d/squid" ]
 	then
