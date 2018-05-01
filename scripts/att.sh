@@ -50,6 +50,7 @@ apt-get install -y python3-pip >/dev/null 2>/dev/null
 #cd /bin
 
 #REMOVENDO ARQUIVOS
+clear
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 echo -e $vermelhoClaro"Removendo Arquivos..."$fim
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
@@ -94,6 +95,7 @@ rm /bin/userbkp >/dev/null 2>/dev/null
 
 rm /root/ExpCleaner.sh /root/CriarUsuario.sh /root/sshlimiter.sh >/dev/null 2>/dev/null
 
+clear
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 echo -e $vermelhoClaro"Arquivos Removidos!"$fim
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
@@ -101,6 +103,7 @@ sleep 5
 clear
 
 #BAIXANDO SCRIPTS
+clear
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 echo -e $vermelhoClaro"Baixando novos arquivos..."$fim
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
@@ -171,8 +174,8 @@ wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/badvpnmenu
 chmod +x /bin/badvpnmenu
 
 rm /bin/setup.sh >/dev/null 2>/dev/null
-clear
 
+clear
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 echo -e $verdeClaro"Download concluido!"$fim
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
@@ -200,12 +203,11 @@ if [ ! -f "/etc/init.d/ssh" ]
 fi
 
 clear
-echo ""
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 echo -e $verdeClaro"Atualizado com sucesso!"$fim
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 sleep 5
-echo ""
+clear
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 echo -e $amarelo"Entrando no menu em:..."$fim
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
