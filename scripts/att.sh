@@ -89,6 +89,7 @@ rm /bin/uinstall-script >/dev/null 2>/dev/null
 rm /bin/userbkp >/dev/null 2>/dev/null
 rm /bin/badvpn-setup >/dev/null 2>/dev/null
 rm /bin/badvpnmenu >/dev/null 2>/dev/null
+rm /bin/badvpn-remove >/dev/null 2>/dev/null
 
 rm /root/ExpCleaner.sh /root/CriarUsuario.sh /root/sshlimiter.sh >/dev/null 2>/dev/null
 
@@ -169,6 +170,8 @@ wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/badvpn-set
 chmod +x /bin/badvpn-setup
 wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/badvpnmenu -O /bin/badvpnmenu
 chmod +x /bin/badvpnmenu
+wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/badvpn-remove -O /bin/badvpn-remove
+chmod +x /bin/badvpn-remove
 
 rm /bin/setup.sh >/dev/null 2>/dev/null
 clear
