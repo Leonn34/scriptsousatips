@@ -1,7 +1,7 @@
 #!/bin/bash
 
 BADVPN="/home/BadVPN"
-UDP="/bin/udp"
+UDP="/bin/badudp"
 
 if [ ! -f "$UDP" ]; then
   echo ""
