@@ -21,7 +21,7 @@ branco="\033[1;37m"
 fim="\033[0;37m"
 #############################################
 
-option reinstalar () {
+reinstalar() {
 apt-get update -y
 apt-get upgrade -y
 wget -c -P /bin https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/setup.sh
@@ -29,7 +29,7 @@ chmod +x /bin/setup.sh
 bash /bin/setup.sh
 }
 
-option remove () {
+remove() {
 echo -e ""
 
 rm /bin/addhost >/dev/null 2>/dev/null
