@@ -57,15 +57,15 @@ echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 sleep 5
 clear
 
+#rm /bin/badudp >/dev/null 2>/dev/null
 rm /bin/addhost >/dev/null 2>/dev/null
 rm /bin/ajuda >/dev/null 2>/dev/null
 rm /bin/alterarlimite >/dev/null 2>/dev/null
 rm /bin/alterarsenha >/dev/null 2>/dev/null
 rm /bin/att >/dev/null 2>/dev/null
 rm /bin/atualizar >/dev/null 2>/dev/null
-#rm /bin/badudp >/dev/null 2>/dev/null
-rm /bin/badvpn-setup >/dev/null 2>/dev/null
 rm /bin/badvpn-remove >/dev/null 2>/dev/null
+rm /bin/badvpn-setup >/dev/null 2>/dev/null
 rm /bin/badvpnmenu >/dev/null 2>/dev/null
 rm /bin/banner >/dev/null 2>/dev/null
 rm /bin/clearcache >/dev/null 2>/dev/null
@@ -88,6 +88,9 @@ rm /bin/socks.py >/dev/null 2>/dev/null
 rm /bin/speedtest.py >/dev/null 2>/dev/null
 rm /bin/sshlimiter >/dev/null 2>/dev/null
 rm /bin/sshmonitor >/dev/null 2>/dev/null
+rm /bin/status01 >/dev/null 2>/dev/null
+rm /bin/status02 >/dev/null 2>/dev/null
+rm /bin/status03 >/dev/null 2>/dev/null
 rm /bin/testeconexao >/dev/null 2>/dev/null
 rm /bin/uinstall-script >/dev/null 2>/dev/null
 rm /bin/userbkp >/dev/null 2>/dev/null
