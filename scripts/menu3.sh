@@ -38,7 +38,7 @@ fi
 #=============================================
 #statussshlimiter=$(cat /tmp/statussshlimiter)
 ps -C sshlimiter > /dev/null
- 
+
 if [ $? = 0 ] ; then
     echo -ne ""
     #echo -e $verdeClaro"ATIVADO"$fim > /tmp/statussshlimiter
@@ -95,14 +95,12 @@ case $opcao in
     3)
     clear
     echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-    echo "DESATIVANDO..."
+    echo -e $vermelhoClaro" DESATIVANDO..."$fim
     sleep 3
     pkill -f sshlimiter
+    echo -e $vermelhoClaro" DESATIVADO COM SUCESSO"$fim
     sleep 3
     menu3
-    sleep5
-    menu3
-    exit
     ;;
     4)
     echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
@@ -124,7 +122,7 @@ case $opcao in
     8)
     clear
     echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-    echo -e $amarelo"TESTANDO VELOCIDADE DO SERVIDOR..."$fim
+    echo -e $amarelo" TESTANDO VELOCIDADE DO SERVIDOR..."$fim
     sleep 2
     clear
     testeconexao
@@ -145,7 +143,8 @@ case $opcao in
     menu
     ;;
     *)
-    echo -e $vermelhoClaro"OPÇÃO INVÁLIDA!!!"$fim
+    clear
+    echo -e $vermelhoClaro" OPÇÃO INVÁLIDA!!!"$fim
     sleep 4
     menu3
 esac
@@ -161,7 +160,7 @@ else
     sleep 0.2
     echo -e $amarelo" [2]"$fim $branco"MOSTRAR NUMERO DE CONEXÕES"$fim
     sleep 0.2
-    echo -e $amarelo" [3]"$fim $branco"LIMITAR CONEXÕES "$fim$branco"["$fim$verdeClaro"INICIAR"$fim$branco"]"$fim $pretoCinza"STATUS: "$fim$vermelhoClaro"DESATIVADO"$fim
+    echo -e $amarelo" [3]"$fim $branco"LIMITAR CONEXÕES "$fim$branco"["$fim$verdeClaro"INICIAR"$fim$branco"]"$fim $pretoCinza"STATUS: "$fim$vermelho"DESATIVADO"$fim
     sleep 0.2
     echo -e $amarelo" [4]"$fim $branco"ADD HOSTS"$fim
     sleep 0.2
@@ -194,7 +193,7 @@ case $opcao in
     netstat -ntpl
     #voltar ao menu opcional
     echo ""
-    echo "ENTER para voltar"
+    echo " ENTER para voltar"
     read -p " "
     sleep 1s
     menu3
@@ -206,15 +205,12 @@ case $opcao in
     3)
     clear
     echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-    echo "Iniciando SSHLIMITER..."
+    echo -e $branco" INICIANDO SSHLIMITER..."$fim
     sleep 3
     screen -dmS screen sshlimiter
-    echo "SSHLIMITER ATIVADO!"
+    echo -e $verdeClaro" SSHLIMITER ATIVADO!"$fim
     sleep 3
     menu3
-    sleep 5
-    menu3
-    exit
     ;;
     4)
     echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
@@ -236,7 +232,7 @@ case $opcao in
     8)
     clear
     echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-    echo -e $amarelo"TESTANDO VELOCIDADE DO SERVIDOR..."$fim
+    echo -e $amarelo" TESTANDO VELOCIDADE DO SERVIDOR..."$fim
     sleep 2
     clear
     testeconexao
@@ -257,7 +253,7 @@ case $opcao in
     menu
     ;;
     *)
-    echo -e $vermelhoClaro"OPÇÃO INVÁLIDA!!!"$fim
+    echo -e $vermelhoClaro" OPÇÃO INVÁLIDA!!!"$fim
     sleep 4
     menu3
 esac

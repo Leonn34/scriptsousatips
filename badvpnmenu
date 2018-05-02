@@ -206,6 +206,7 @@ exit
 
 # menu badvpn
 clear
+
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 echo -e $branco"              MENU BADUDP"$fim
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim

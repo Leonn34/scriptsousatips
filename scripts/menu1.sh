@@ -1,37 +1,5 @@
 #!/bin/bash
-####################################
-#CORES:
-#ESTILOS:
-#00: Nenhum
-#01: Negrito
-#04: Sublinhado
-#05: Piscante
-#07: Reverso
-#08: Oculto
-####################################
-#CORES TEXTO:
-#30: preto
-#31: Vermelho
-#32: verde
-#33: amarelo
-#34: Azul
-#35: Magenta (Rosa)
-#36: Ciano (Azul Ciano)
-#37: branco
-####################################
-#CORES FUNDO:
-#40: pretoo
-#41: Vermelho
-#42: verde
-#43: Amarelo
-#44: Azul
-#45: Magenta (Rosa)
-#46: Ciano (Azul Ciano)
-#47: Branco
-###############EXEMPLO:#############
-#Viva o Linux
-#echo -e '\033[01;37mViva o \033[04;32mLinux\033[00;37m!!!'
-#############################################
+
 ##CORES DE FONTES,###################
 ##INSERIR A COR NO INÍCIO E FINALIZA COM FIM
 ##EXEMPLO:
@@ -128,7 +96,7 @@ echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 menu
 ;;
 *)
-echo -e $vermelhoClaro"OPÇÃO INVÁLIDA!!!"$fim
+echo -e $vermelhoClaro" OPÇÃO INVÁLIDA!!!"$fim
 sleep 4
 menu1
 esac

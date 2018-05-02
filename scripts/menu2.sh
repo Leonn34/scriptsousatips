@@ -1,36 +1,5 @@
 #!/bin/bash
-####################################
-#CORES:
-#ESTILOS:
-#00: Nenhum
-#01: Negrito
-#04: Sublinhado
-#05: Piscante
-#07: Reverso
-#08: Oculto
-####################################
-#CORES TEXTO:
-#30: preto
-#31: Vermelho
-#32: verde
-#33: amarelo
-#34: Azul
-#35: Magenta (Rosa)
-#36: Ciano (Azul Ciano)
-#37: branco
-####################################
-#CORES FUNDO:
-#40: pretoo
-#41: Vermelho
-#42: verde
-#43: Amarelo
-#44: Azul
-#45: Magenta (Rosa)
-#46: Ciano (Azul Ciano)
-#47: Branco
-###############EXEMPLO:#############
-#Viva o Linux
-#echo -e '\033[01;37mViva o \033[04;32mLinux\033[00;37m!!!'
+
 #############################################
 ##CORES DE FONTES,###################
 ##INSERIR A COR NO INÍCIO E FINALIZA COM FIM
@@ -60,29 +29,35 @@ fim="\033[0;37m"
 clear
 #checar serviços
 #=====================================================
+
+statusdrop=$(cat /tmp/statusdrop)
 ps -C dropbear > /dev/null
 if [ $? = 0 ]; then
-echo -e $verdeClaro"ATIVADO"$fim > /bin/status01
+echo -e $verdeClaro"ATIVADO"$fim > /tmp/statusdrop
 else
-echo -e $vermelhoClaro"DESATIVADO"$fim > /bin/status01
+echo -e $vermelhoClaro"DESATIVADO"$fim > /tmp/statusdrop
 fi
-n1=$(cat /bin/status01)
+
 #=====================================================
+
+statusstunnel=$(cat /tmp/statusstunnel)
 ps -C stunnel4 > /dev/null
 if [ $? = 0 ]; then
-echo -e $verdeClaro"ATIVADO"$fim > /bin/status02
+echo -e $verdeClaro"ATIVADO"$fim > /tmp/statusstunnel
 else
-echo -e $vermelhoClaro"DESATIVADO"$fim > /bin/status02
+echo -e $vermelhoClaro"DESATIVADO"$fim > /tmp/statusstunnel
 fi
-n2=$(cat /bin/status02)
+
 #=====================================================
+
+statussocks=$(cat /tmp/statussocks)
 ps -C socks5 > /dev/null
 if [ $? = 0 ]; then
-echo -e $verdeClaro"ATIVADO"$fim > /bin/status03
+echo -e $verdeClaro"ATIVADO"$fim > /tmp/statussocks
 else
-echo -e $vermelhoClaro"DESATIVADO"$fim > /bin/status03
+echo -e $vermelhoClaro"DESATIVADO"$fim > /tmp/statussocks
 fi
-n3=$(cat /bin/status03)
+
 #=====================================================
  # MENU2 OPCAO 3 (SERVIÇOS)
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
@@ -90,11 +65,11 @@ echo ""
 echo -e $branco" GERENCIADOR DE SERVIÇOS"$fim
 echo ""
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-echo -e $amarelo" [1]"$fim $branco"STUNNEL4"$fim $pretoCinza"STATUS: "$fim$n2
+echo -e $amarelo" [1]"$fim $branco"STUNNEL4"$fim $pretoCinza"STATUS: "$fim$statusstunnel
 sleep 0.2
-echo -e $amarelo" [2]"$fim $branco"SOCKS5"$fim $pretoCinza"STATUS: "$fim$n3
+echo -e $amarelo" [2]"$fim $branco"SOCKS5"$fim $pretoCinza"STATUS: "$fim$statussocks
 sleep 0.2
-echo -e $amarelo" [3]"$fim $branco"DROPBEAR"$fim $pretoCinza"STATUS: "$fim$n1
+echo -e $amarelo" [3]"$fim $branco"DROPBEAR"$fim $pretoCinza"STATUS: "$fim$statusdrop
 sleep 0.2
 echo -e $amarelo" [4]"$fim $branco"VOLTAR AO MENU PRINCIPAL"$fim
 sleep 0.2
