@@ -29,14 +29,16 @@ UDP="/bin/badudp"
 
 # menu
 badvpnmenu() {
-    if [ -f "$UDP" ]; then
     clear
     echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-    echo -e $amarelo" BADVPN STATUS: "$fim$verdeClaro"INSTALADO!"$fim
+    echo -e $branco" BADVPN MENU"$fim
+    echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
+if [ -f "$UDP" ]; then
+    echo -ne ""
     NUMBER=$(ps -x | grep -c "badvpn-udpgw")
     if [ $NUMBER = "2" ]; then
-        echo -e $amarelo" STATUS: "$fim$verdeClaro"ATIVO"$fim
-        echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
+        echo -e $pretoCinza" STATUS: "$fim$verdeClaro"ON"$fim
+        echo -e ""
         echo -e $branco" [1] PARAR"$fim
         echo -e $branco" [2] DESINSTALAR"$fim
         echo -e $branco" [3] SAIR"$fim
@@ -53,10 +55,12 @@ badvpnmenu() {
             2)
                 clear
                 badvpn-remove
+                exit
                 ;;
             3)
                 clear
                 menu
+                exit
                 ;;
             *)
                 clear
@@ -65,10 +69,8 @@ badvpnmenu() {
                 ;;
         esac
     else
-        clear
-        echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-        echo -e $branco" STATUS: "$fim$vermelhoClaro"DESATIVADO!"$fim
-        echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
+        echo -e $pretoCinza" STATUS:"$fim$vermelho"OFF"$fim
+        echo -e ""
         echo -e $branco" [1] ATIVAR"$fim
         echo -e $branco" [2] DESINSTALAR"$fim
         echo -e $branco" [3] SAIR"$fim
@@ -86,10 +88,12 @@ badvpnmenu() {
             2)
                 clear
                 badvpn-remove
+                exit
                 ;;
             3)
                 clear
                 menu
+                exit
                 ;;
             *)
                 clear
@@ -99,25 +103,28 @@ badvpnmenu() {
         esac
     fi
     else
-        clear
+        echo -e $fim$vermelhoClaro" BADVPNN NÃO INSTALADO!"$fim
         echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-        echo -e $branco" BADVPN STATUS: "$fim$vermelhoClaro"NÃO INSTALADO!"$fim
-        echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-        echo -e $branco" [1] INSTALAR"$fim
-        echo -e $branco" [2] SAIR"$fim
-        echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-        read -p "OPÇÃO [1-2]: " opcao3
+        read -p " DESEJA INSTALAR? [s/n]: " opcao3
+        if [ -z $opcao3 ]; then
+          echo -e $amarelo" ESCOLHA UMA OPÇÃO!"$fim
+          sleep 3
+          badvpnmenu
+         fi
         case $opcao3 in
-            1)
+            (s|S|y|Y)
                 badvpn-setup #setup badudp
+                exit
                 ;;
-            2)
+            (n|N)
                 clear
                 menu
                 exit
                 ;;
             *)
                 clear
+                echo -e $vermelhoClaro" OPÇÃO INVÁLIDA!"$fim
+                sleep 3
                 badvpnmenu #menu
                 exit
                 ;;
@@ -182,23 +189,24 @@ exit
 badvpn-remove() {
     if [ ! -f "$UDP" ]; then
   echo ""
-  echo -e "VOCÊ NÃO POSSUI O BADVPN INSTALADO!"
-  sleep 3s
+  echo -e $vermelhoClaro" VOCÊ NÃO POSSUI O BADVPN INSTALADO!"$fim
+  sleep 3
   badvpnmenu
   exit
 else
   clear
-  echo ""
-  echo -e " DESINSTALANDO BADVPN..."
+  echo -e $verdeClaro" DESINSTALANDO BADVPN..."$fim
+  sleep 3
   rm -rf $BADVPN
   rm -rf $UDP
-  sleep 3s
+  sleep 3
   clear
-  echo ""
-  echo -e " BADVPN DESINSTALADO COM SUCESSO!"
+  echo -e $verdeClaro" BADVPN DESINSTALADO COM SUCESSO!"$fim
+  sleep 3
+  menu
+  exit
 fi
-echo ""
-echo -e " APERTE A TECLA ENTER PARA VOLTAR AO MENU..."
+echo -e $verdeClaro" APERTE A TECLA ENTER PARA VOLTAR AO MENU..."$fim
 read ENTER
 badvpnmenu
 exit
@@ -207,33 +215,5 @@ exit
 # menu badvpn
 clear
 
-echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-echo -e $branco"              MENU BADUDP"$fim
-echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-echo -e $amarelo" ESCOLHA A OPÇÃO"$fim
-echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-echo -e $branco" [1] CONFIGURAR"$fim
-echo -e $branco" [2] VOLTAR AO MENU"$fim
-echo -e $branco" [3] SAIR"$fim
-echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-read -p "OPÇÃO [1-3]: " opcao
-case $opcao in
-    1)
-    clear
-    badvpnmenu
-    exit
-    ;;
-    2)
-    clear
-    menu
-    exit
-    ;;
-    3)
-    clear
-    exit
-    ;;
-    *)
-    clear
-    badvpnmenu
-    exit
-esac
+badvpnmenu
+exit
