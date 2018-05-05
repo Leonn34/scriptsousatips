@@ -296,7 +296,7 @@ then
 	chmod +x /bin/menudrop
 	wget https://raw.githubusercontent.com/Leonn34/scripts/master/menu-stunnel4.sh -O /bin/menu-stunnel4
 	chmod +x /bin/menu-stunnel4
-	wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/scripts/master/badvpnmenu.sh -O /bin/badvpnmenu
+	wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/scripts/badvpnmenu.sh -O /bin/badvpnmenu
 	chmod +x /bin/badvpnmenu
 
 	if [ ! -f "/etc/init.d/squid" ]
