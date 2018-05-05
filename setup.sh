@@ -207,7 +207,7 @@ then
 	chmod +x /bin/menudrop
 	wget https://raw.githubusercontent.com/Leonn34/scripts/master/menu-stunnel4.sh -O /bin/menu-stunnel4
 	chmod +x /bin/menu-stunnel4
-	wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/badvpnmenu -O /bin/badvpnmenu
+	wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/scripts/master/badvpnmenu.sh -O /bin/badvpnmenu
 	chmod +x /bin/badvpnmenu
 
 	if [ ! -f "/etc/init.d/squid3" ]
@@ -292,11 +292,11 @@ then
 	chmod +x /bin/banner
 	wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/scripts/criarusuariotemporario.sh -O /bin/criarusuariotemporario
 	chmod +x /bin/criarusuariotemporario
-	wget https://raw.githubusercontent.com/Leonn34/scripts/master/dropbear.sh -O /bin/dropbear.sh
-	chmod +x /bin/dropbear.sh
+	wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/scripts/menudrop.sh -O /bin/menudrop
+	chmod +x /bin/menudrop
 	wget https://raw.githubusercontent.com/Leonn34/scripts/master/menu-stunnel4.sh -O /bin/menu-stunnel4
 	chmod +x /bin/menu-stunnel4
-	wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/badvpnmenu -O /bin/badvpnmenu
+	wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/scripts/master/badvpnmenu.sh -O /bin/badvpnmenu
 	chmod +x /bin/badvpnmenu
 
 	if [ ! -f "/etc/init.d/squid" ]
