@@ -110,30 +110,34 @@ echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 echo -e $cinzaClaro" OPÇÃO ESCOLHIDA:"$fim $branco$opcao$fim
 
 case $opcao in
-1)
-socks
-;;
-2)
-menu2
-;;
-*)
-echo "Opção inválida!"
-sleep 1
-clear
-menu2
+    1)
+    socks
+    ;;
+    2)
+    menu2
+    ;;
+    *)
+    echo "Opção inválida!"
+    sleep 1
+    clear
+    menu2
+    exit
 esac
 ;;
 3)
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-dropbear.sh
+menudrop
+exit
 ;;
 4)
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 menu
+exit
 ;;
 *)
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 echo -e $vermelhoClaro"OPÇÃO INVÁLIDA!!!"$fim
 sleep 4
 menu2
+exit
 esac

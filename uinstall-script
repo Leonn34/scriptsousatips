@@ -53,6 +53,7 @@ rm /bin/menu-stunnel4 >/dev/null 2>/dev/null
 rm /bin/menu1 >/dev/null 2>/dev/null
 rm /bin/menu2 >/dev/null 2>/dev/null
 rm /bin/menu3 >/dev/null 2>/dev/null
+rm /bin/menudrop >/dev/null 2>/dev/null
 rm /bin/mudardata >/dev/null 2>/dev/null
 rm /bin/remover >/dev/null 2>/dev/null
 rm /bin/setup.sh >/dev/null 2>/dev/null
@@ -88,14 +89,14 @@ echo -e $amarelo" [2] REINSTALAR"$fim
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 read -p ": " resposta
 case $resposta in
- 2)
-remove
-reinstalar
-exit
-;;
- *)
-remove
-exit
-;;
+     2)
+    remove
+    reinstalar
+    exit
+    ;;
+     *)
+    remove
+    exit
+    ;;
 esac
 exit

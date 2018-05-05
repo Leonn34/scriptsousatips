@@ -30,7 +30,7 @@ mv -f $arq1 $arq
 clear
 echo ""
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-echo -e $vermelhoClaro"Aguarde...."$fim
+echo -e $vermelhoClaro" AGUARDE...."$fim
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 sleep 5
 clear
@@ -80,6 +80,7 @@ rm /bin/menu-stunnel4 >/dev/null 2>/dev/null
 rm /bin/menu1 >/dev/null 2>/dev/null
 rm /bin/menu2 >/dev/null 2>/dev/null
 rm /bin/menu3 >/dev/null 2>/dev/null
+rm /bin/menudrop >/dev/null 2>/dev/null
 rm /bin/mudardata >/dev/null 2>/dev/null
 rm /bin/remover >/dev/null 2>/dev/null
 rm /bin/setup.sh >/dev/null 2>/dev/null
@@ -169,8 +170,8 @@ wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/scripts/ba
 chmod +x /bin/banner
 wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/scripts/criarusuariotemporario.sh -O /bin/criarusuariotemporario
 chmod +x /bin/criarusuariotemporario
-wget https://raw.githubusercontent.com/Leonn34/scripts/master/dropbear.sh -O /bin/dropbear.sh
-chmod +x /bin/dropbear.sh
+wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/scripts/menudrop.sh -O /bin/menudrop
+chmod +x /bin/menudrop
 wget https://raw.githubusercontent.com/Leonn34/scripts/master/menu-stunnel4.sh -O /bin/menu-stunnel4
 chmod +x /bin/menu-stunnel4
 wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/badvpnmenu -O /bin/badvpnmenu
@@ -180,9 +181,9 @@ rm /bin/setup.sh >/dev/null 2>/dev/null
 
 clear
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-echo -e $verdeClaro"Download concluido!"$fim
+echo -e $verdeClaro" DOWNLOAD CONCLUIDO!"$fim
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-sleep 5
+sleep 4
 cd
 sleep 2
 clear
@@ -207,12 +208,12 @@ fi
 
 clear
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-echo -e $verdeClaro"Atualizado com sucesso!"$fim
+echo -e $verdeClaro" ATUALIZADO COM SUCESSO!"$fim
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 sleep 5
 clear
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-echo -e $amarelo"Entrando no menu em:..."$fim
+echo -e $amarelo" Entrando no menu em:..."$fim
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 sleep 1
 echo ""

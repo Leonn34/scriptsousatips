@@ -23,12 +23,12 @@ fim="\033[0;37m"
 clear
 
 echo -e $verd"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-echo -e $bra"BEM VINDO AO SCRIPT SOUSA TIPS"$fim
+echo -e $bra" BEM VINDO AO SCRIPT SOUSA TIPS"$fim
 echo -e $verd"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 sleep 2
 echo ""
 echo -e $verd"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-echo -e $bra"ESTE SCRIPT FARÁ AS SEGUINTES ALTERAÇÕES:"$fim
+echo -e $bra" ESTE SCRIPT FARÁ AS SEGUINTES ALTERAÇÕES:"$fim
 sleep 1
 echo -e $verd"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 sleep 1
@@ -110,6 +110,7 @@ rm /bin/menu-stunnel4 >/dev/null 2>/dev/null
 rm /bin/menu1 >/dev/null 2>/dev/null
 rm /bin/menu2 >/dev/null 2>/dev/null
 rm /bin/menu3 >/dev/null 2>/dev/null
+rm /bin/menudrop >/dev/null 2>/dev/null
 rm /bin/mudardata >/dev/null 2>/dev/null
 rm /bin/remover >/dev/null 2>/dev/null
 rm /bin/setup.sh >/dev/null 2>/dev/null
@@ -202,8 +203,8 @@ then
 	chmod +x /bin/banner
 	wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/scripts/criarusuariotemporario.sh -O /bin/criarusuariotemporario
 	chmod +x /bin/criarusuariotemporario
-	wget https://raw.githubusercontent.com/Leonn34/scripts/master/dropbear.sh -O /bin/dropbear.sh
-	chmod +x /bin/dropbear.sh
+	wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/scripts/menudrop.sh -O /bin/menudrop
+	chmod +x /bin/menudrop
 	wget https://raw.githubusercontent.com/Leonn34/scripts/master/menu-stunnel4.sh -O /bin/menu-stunnel4
 	chmod +x /bin/menu-stunnel4
 	wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/badvpnmenu -O /bin/badvpnmenu
