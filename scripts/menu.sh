@@ -1,37 +1,5 @@
 #!/bin/bash
-####################################
-#CORES:
-#ESTILOS:
-#00: Nenhum
-#01: Negrito
-#04: Sublinhado
-#05: Piscante
-#07: Reverso
-#08: Oculto
-####################################
-#CORES TEXTO:
-#30: preto
-#31: Vermelho
-#32: verde
-#33: amarelo
-#34: Azul
-#35: Magenta (Rosa)
-#36: Ciano (Azul Ciano)
-#37: branco
-####################################
-#CORES FUNDO:
-#40: pretoo
-#41: Vermelho
-#42: verde
-#43: Amarelo
-#44: Azul
-#45: Magenta (Rosa)
-#46: Ciano (Azul Ciano)
-#47: Branco
-###############EXEMPLO:#############
-#Viva o Linux
-#echo -e '\033[01;37mViva o \033[04;32mLinux\033[00;37m!!!'
-#############################################
+
 ##CORES DE FONTES,###################
 ##INSERIR A COR NO INÍCIO E FINALIZA COM FIM
 ##EXEMPLO:
@@ -94,6 +62,62 @@ echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 echo -e $cyan"                                     USUÁRIOS ON:"$fim $verdeClaro$(ps x | grep hd | grep -v root | grep priv |wc -l)$fim
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 sleep 0.2
+
+# inicio verifica arquivos diretorios
+#-------------------------------------------
+drop1="/etc/checker/drop_status"
+stun="/etc/checker/stun_status"
+openv="/etc/checker/open_status"
+#-------------------------------------------
+if [ -d /etc/checker ]; then
+  echo -ne ""
+  else 
+  mkdir /etc/checker
+fi
+#-------------------------------------------
+if [ -e $drop1 ]; then
+  echo -ne ""
+  else
+  touch $drop1
+fi
+#-------------------------------------------
+if [ -e $stun ]; then
+  echo -ne ""
+  else
+  touch $stun
+fi
+#-------------------------------------------
+if [ -e $openv ]; then
+  echo -ne ""
+  else
+  touch $openv
+fi
+#-------------------------------------------
+# fim verifica arquivos diretorios
+result=$(cat $drop1)
+if [ -z $result ]; then
+  echo -ne ""
+  else
+  echo -e $pretoCinza" SERVIÇO ATIVO NO MOMENTO:"$fim $amarelo$result$fim
+  echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
+fi
+#-------------------------------------------
+result1=$(cat $stun)
+if [ -z $result1 ]; then
+  echo -ne ""
+  else
+  echo -e $pretoCinza" SERVIÇO ATIVO NO MOMENTO:"$fim $amarelo$result1$fim
+  echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
+fi
+#-------------------------------------------
+result2=$(cat $openv)
+if [ -z $result2 ]; then
+  echo -ne ""
+  else
+  echo -e $pretoCinza" SERVIÇO ATIVO NO MOMENTO:"$fim $amarelo$result2$fim
+  echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
+fi
+#-------------------------------------------
 # MENU
 echo -e $amarelo" [1]"$fim $branco"APLICAR ATUALIZAÇÕES"$fim
 sleep 0.2

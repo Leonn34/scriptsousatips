@@ -172,7 +172,7 @@ wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/scripts/cr
 chmod +x /bin/criarusuariotemporario
 wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/scripts/menudrop.sh -O /bin/menudrop
 chmod +x /bin/menudrop
-wget https://raw.githubusercontent.com/Leonn34/scripts/master/menu-stunnel4.sh -O /bin/menu-stunnel4
+wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/scripts/menu-stunnel4.sh -O /bin/menu-stunnel4
 chmod +x /bin/menu-stunnel4
 wget https://raw.githubusercontent.com/Leonn34/scriptsousatips/master/scripts/badvpnmenu.sh -O /bin/badvpnmenu
 chmod +x /bin/badvpnmenu

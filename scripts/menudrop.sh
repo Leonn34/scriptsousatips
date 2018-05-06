@@ -23,7 +23,16 @@ cyanClaro="\033[1;36m"
 branco="\033[1;37m"
 fim="\033[0;37m"
 #############################################
-
+#--------------------------------------------
+drop1="/etc/checker/drop_status"
+stun="/etc/checker/stun_status"
+openv="/etc/checker/open_status"
+if [ -d /etc/checker ]; then
+  echo -ne ""
+  else 
+  mkdir /etc/checker
+  fi
+#--------------------------------------------
 drop="/etc/default/dropbear"
 
 # inicio menu
@@ -34,6 +43,7 @@ menudrop() {
   echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 if [ -e "$drop" ]; then
     echo -ne ""
+    echo "DROPBEAR" > $drop1 # cria o arquivo pra verificar se está ativo no menu principal
     NUMBER=$(ps -x | grep -c "dropbear")
     if [ $NUMBER = "2" ]; then
         echo -e $pretoCinza" STATUS:"$fim $verdeClaro"ON"$fim
@@ -62,6 +72,7 @@ if [ -e "$drop" ]; then
     else
         echo -e $pretoCinza" STATUS:"$fim $vermelho"OFF"$fim
         echo -e ""
+        echo "" > $drop1 # cria o arquivo pra verificar se está ativo no menu principal
         echo -e $branco" [1] ATIVAR"$fim
         echo -e $branco" [2] SAIR"$fim
         echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
