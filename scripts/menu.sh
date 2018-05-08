@@ -110,6 +110,12 @@ if [ -z $result1 ]; then
   echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 fi
 #-------------------------------------------
+ps -C openvpn > /dev/null # verifica se o servico openvpn esta ativo ou não
+if [ $? = 0 ] ; then
+        echo -e "OPENVPN" > $openv
+else
+        echo -e "" > $openv
+fi
 result2=$(cat $openv)
 if [ -z $result2 ]; then
   echo -ne ""
