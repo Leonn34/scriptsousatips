@@ -68,6 +68,7 @@ sleep 0.2
 drop1="/etc/checker/drop_status"
 stun="/etc/checker/stun_status"
 openv="/etc/checker/open_status"
+sock="/etc/checker/sock_status"
 #-------------------------------------------
 if [ -d /etc/checker ]; then
   echo -ne ""
@@ -91,6 +92,12 @@ if [ -e $openv ]; then
   echo -ne ""
   else
   touch $openv
+fi
+#-------------------------------------------
+if [ -e $sock ]; then
+  echo -ne ""
+  else
+  touch $sock
 fi
 #-------------------------------------------
 # fim verifica arquivos diretorios
@@ -121,6 +128,14 @@ if [ -z $result2 ]; then
   echo -ne ""
   else
   echo -e $pretoCinza" SERVIÇO ATIVO NO MOMENTO:"$fim $amarelo$result2$fim
+  echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
+fi
+#-------------------------------------------
+result3=$(cat $sock)
+if [ -z $result3 ]; then
+  echo -ne ""
+  else
+  echo -e $pretoCinza" SERVIÇO ATIVO NO MOMENTO:"$fim $amarelo$result3$fim
   echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
 fi
 #-------------------------------------------

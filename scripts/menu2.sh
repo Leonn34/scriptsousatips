@@ -25,39 +25,68 @@ cyanClaro="\033[1;36m"
 branco="\033[1;37m"
 fim="\033[0;37m"
 #############################################
-
+# inicio verifica arquivos diretorios
+#-------------------------------------------
+drop_on_off="/etc/checker/drop_status1"
+stun_on_off="/etc/checker/stun_status1"
+openv_on_off="/etc/checker/open_status1"
+sock_on_off="/etc/checker/sock_status1"
+#-------------------------------------------
+if [ -d /etc/checker ]; then
+  echo -ne ""
+  else 
+  mkdir /etc/checker
+fi
+#-------------------------------------------
+if [ -e $drop_on_off ]; then
+  echo -ne ""
+  else
+  touch $drop_on_off
+fi
+#-------------------------------------------
+if [ -e $stun_on_off ]; then
+  echo -ne ""
+  else
+  touch $stun_on_off
+fi
+#-------------------------------------------
+if [ -e $openv_on_off ]; then
+  echo -ne ""
+  else
+  touch $openv_on_off
+fi
+#-------------------------------------------
+if [ -e $sock_on_off ]; then
+  echo -ne ""
+  else
+  touch $sock_on_off
+fi
 clear
 #checar serviços
 #=====================================================
-
-statusdrop=$(cat /tmp/statusdrop)
+result_drop=$(cat $drop_on_off)
 ps -C dropbear > /dev/null
 if [ $? = 0 ]; then
-echo -e $verdeClaro"ATIVADO"$fim > /tmp/statusdrop
+echo -e $verdeClaro"ATIVADO"$fim > $drop_on_off
 else
-echo -e $vermelhoClaro"DESATIVADO"$fim > /tmp/statusdrop
+echo -e $vermelhoClaro"DESATIVADO"$fim > $drop_on_off
 fi
-
 #=====================================================
-
-statusstunnel=$(cat /tmp/statusstunnel)
+result_stun=$(cat $stun_on_off)
 ps -C stunnel4 > /dev/null
 if [ $? = 0 ]; then
-echo -e $verdeClaro"ATIVADO"$fim > /tmp/statusstunnel
+echo -e $verdeClaro"ATIVADO"$fim > $stun_on_off
 else
-echo -e $vermelhoClaro"DESATIVADO"$fim > /tmp/statusstunnel
+echo -e $vermelhoClaro"DESATIVADO"$fim > $stun_on_off
 fi
-
 #=====================================================
-
-statussocks=$(cat /tmp/statussocks)
+result_sock=$(cat $sock_on_off)
 ps -C socks5 > /dev/null
 if [ $? = 0 ]; then
-echo -e $verdeClaro"ATIVADO"$fim > /tmp/statussocks
+echo -e $verdeClaro"ATIVADO"$fim > $sock_on_off
 else
-echo -e $vermelhoClaro"DESATIVADO"$fim > /tmp/statussocks
+echo -e $vermelhoClaro"DESATIVADO"$fim > $sock_on_off
 fi
-
 #=====================================================
  # MENU2 OPCAO 3 (SERVIÇOS)
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
@@ -65,11 +94,11 @@ echo ""
 echo -e $branco" GERENCIADOR DE SERVIÇOS"$fim
 echo ""
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-echo -e $amarelo" [1]"$fim $branco"STUNNEL4"$fim $pretoCinza"STATUS: "$fim$statusstunnel
+echo -e $amarelo" [1]"$fim $branco"STUNNEL4"$fim $pretoCinza"STATUS: "$fim$result_stun
 sleep 0.2
-echo -e $amarelo" [2]"$fim $branco"SOCKS5"$fim $pretoCinza"STATUS: "$fim$statussocks
+echo -e $amarelo" [2]"$fim $branco"SOCKS5"$fim $pretoCinza"STATUS: "$fim$result_sock
 sleep 0.2
-echo -e $amarelo" [3]"$fim $branco"DROPBEAR"$fim $pretoCinza"STATUS: "$fim$statusdrop
+echo -e $amarelo" [3]"$fim $branco"DROPBEAR"$fim $pretoCinza"STATUS: "$fim$result_drop
 sleep 0.2
 echo -e $amarelo" [4]"$fim $branco"VOLTAR AO MENU PRINCIPAL"$fim
 sleep 0.2
