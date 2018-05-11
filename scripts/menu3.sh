@@ -168,7 +168,7 @@ else
     sleep 0.2
     echo -e $amarelo" [6]"$fim $branco"LIMPAR CACHÊ"$fim
     sleep 0.2
-    echo -e $amarelo" [7]"$fim $branco"ATIVAR BADUDP"$fim $pretoCinza"STATUS: "$fim$statusbadudp
+    echo -e $amarelo" [7]"$fim $branco"ATIVAR BADUDP"$fim $pretoCinza"STATUS: "$fim$result_udp
     sleep 0.2
     echo -e $amarelo" [8]"$fim $branco"TESTE DE VELOCIDADE"$fim
     sleep 0.2
