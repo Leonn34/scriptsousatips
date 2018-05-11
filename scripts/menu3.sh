@@ -28,20 +28,28 @@ fim="\033[0;37m"
 # MENU3 OPCAO 4 (FERRAMENTAS)
 # CHECAR SERVICO ATIVO
 #============================================
-statusbadudp=$(cat /tmp/statusbadudp)
+# inicio verifica arquivos diretorios
+#-------------------------------------------
+udp_on_off="/etc/checker/udp_status1"
+#-------------------------------------------
+if [ -e $udp_on_off ]; then
+  echo -ne ""
+  else
+  touch $udp_on_off
+fi
+#-------------------------------------------
+result_udp=$(cat $udp_on_off)
 ps -C badudp > /dev/null
 if [ $? = 0 ] ; then
-        echo -e $verdeClaro"ATIVADO"$fim > /tmp/statusbadudp
+        echo -e $verdeClaro"ATIVADO"$fim > $udp_on_off
 else
-        echo -e $vermelhoClaro"DESATIVADO"$fim > /tmp/statusbadudp
+        echo -e $vermelhoClaro"DESATIVADO"$fim > $udp_on_off
 fi
 #=============================================
-#statussshlimiter=$(cat /tmp/statussshlimiter)
 ps -C sshlimiter > /dev/null
 
 if [ $? = 0 ] ; then
     echo -ne ""
-    #echo -e $verdeClaro"ATIVADO"$fim > /tmp/statussshlimiter
     clear
     echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
     echo -e $branco" FERRAMENTAS"$fim
@@ -58,7 +66,7 @@ if [ $? = 0 ] ; then
     sleep 0.2
     echo -e $amarelo" [6]"$fim $branco"LIMPAR CACHÊ"$fim
     sleep 0.2
-    echo -e $amarelo" [7]"$fim $branco"ATIVAR BADUDP"$fim $pretoCinza"STATUS: "$fim$statusbadudp
+    echo -e $amarelo" [7]"$fim $branco"ATIVAR BADUDP"$fim $pretoCinza"STATUS: "$fim$result_udp
     sleep 0.2
     echo -e $amarelo" [8]"$fim $branco"TESTE DE VELOCIDADE"$fim
     sleep 0.2
@@ -258,4 +266,4 @@ case $opcao in
     menu3
 esac
 fi
-#=============================================
+
