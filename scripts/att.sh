@@ -95,6 +95,7 @@ rm /bin/status03 >/dev/null 2>/dev/null
 rm /bin/testeconexao >/dev/null 2>/dev/null
 rm /bin/uinstall-script >/dev/null 2>/dev/null
 rm /bin/userbkp >/dev/null 2>/dev/null
+rm /etc/checker/*
 
 
 rm /root/ExpCleaner.sh /root/CriarUsuario.sh /root/sshlimiter.sh >/dev/null 2>/dev/null

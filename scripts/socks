@@ -23,7 +23,7 @@ branco="\033[1;37m"
 fim="\033[0;37m"
 #############################################
 
-sock="/etc/checker/socks_status"
+sock="/etc/checker/sock_status"
 
 # menu socks
 menusocks () {
@@ -81,7 +81,7 @@ exit
 ;;
 esac
 fi
-}	
+}
 
 # ativar socks
 socks_on () {
@@ -149,7 +149,7 @@ else
 					menusocks
 					exit
 					fi
-	
+
 	fi
 }
 
