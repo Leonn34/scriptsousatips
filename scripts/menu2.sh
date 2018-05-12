@@ -34,7 +34,7 @@ sock_on_off="/etc/checker/sock_status1"
 #-------------------------------------------
 if [ -d /etc/checker ]; then
   echo -ne ""
-  else 
+  else
   mkdir /etc/checker
 fi
 #-------------------------------------------
@@ -81,7 +81,7 @@ echo -e $vermelhoClaro"DESATIVADO"$fim > $stun_on_off
 fi
 #=====================================================
 result_sock=$(cat $sock_on_off)
-ps -C socks5 > /dev/null
+ps -C "python socks.py" > /dev/null
 if [ $? = 0 ]; then
 echo -e $verdeClaro"ATIVADO"$fim > $sock_on_off
 else
