@@ -119,9 +119,11 @@ menu-stunnel4
 2)
 clear
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-echo -e $amarelo"Para que o SOCKS funcione corretamente,"$fim
-echo -e $amarelo"Comente a porta a ser utilizada no squid.conf"$fim
-echo -e $branco"Ex.: nano /etc/squid3/squid.conf"$fim
+echo -e $amarelo" Para que o SOCKS funcione corretamente,"$fim
+echo -e $amarelo" Comente a porta a ser utilizada no squid.conf"$fim
+echo -e $branco" Ex.: Vou usar a porta 80!"$fim
+echo -e $branco" Edite o arquivo com o seguinte comando:"$fim
+echo -e $branco" nano /etc/squid3/squid.conf"$fim
 echo ""
 echo -e $vermelhoClaro"#"$fim$verdeClaro"http_port 80"$fim
 echo -e $verdeClaro"http_port 3128"$fim
@@ -130,28 +132,15 @@ echo -e $verdeClaro"http_port 8799"$fim
 echo ""
 echo -e $amarelo"Depois reinicie:"$fim $branco"service squid3 restart"$fim
 echo ""
-echo -e $verdeClaro"Deseja continuar?"$fim
-echo -e $branco"[1]"$fim $verdeClaro"SIM"$fim
-echo -e $branco"[2]"$fim $vermelhoClaro"NÃO"$fim
-echo ""
-read -p "[1-2] " opcao
-echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
-echo -e $cinzaClaro" OPÇÃO ESCOLHIDA:"$fim $branco$opcao$fim
-
-case $opcao in
-    1)
+read -p "Continuar? [ s/n ]: " opsn
+  case $opsn in
+    (s|S)
     socks
     ;;
-    2)
-    menu2
-    ;;
     *)
-    echo "Opção inválida!"
-    sleep 1
-    clear
     menu2
     exit
-esac
+  esac
 ;;
 3)
 echo -e $verdeClaro"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="$fim
