@@ -39,7 +39,7 @@ echo ""
 #ATUALIZANDO SISTEMA
 
 apt-get update >/dev/null 2>/dev/null
-apt-get upgrade -y >/dev/null 2>/dev/null
+#apt-get upgrade -y >/dev/null 2>/dev/null
 
 apt-get install bc >/dev/null 2>/dev/null
 apt-get install python-pip -y >/dev/null 2>/dev/null
