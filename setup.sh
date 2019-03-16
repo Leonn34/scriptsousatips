@@ -4,7 +4,7 @@
 #Viva o Linux
 #echo -e '\033[01;37mViva o \033[04;32mLinux\033[00;37m!!!'
 #############################################
-##CORES DE FONTES EM BOLD,###################
+##CORES DE FONTES EM BOLD ,###################
 ##INSERIR A COR NO INÍCIO E FINALIZA COM FIM
 ##EXEMPLO:
 ## echo -e $amar"SEU_TEXTO_AQUI"$fim
